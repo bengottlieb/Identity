@@ -39,6 +39,13 @@
 		B5CBEFC820E9314C005F16B1 /* FBSDKLoginKit.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B5CBEFBF20E930E8005F16B1 /* FBSDKLoginKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5CBEFC920E9314C005F16B1 /* FBSDKCoreKit.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B5CBEFC020E930E8005F16B1 /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5CBEFCA20E9314C005F16B1 /* Bolts.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B5CBEFC120E930E8005F16B1 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B5CBEFD120E93586005F16B1 /* Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CBEFD020E93586005F16B1 /* Twitter.swift */; };
+		B5CBEFD520E93848005F16B1 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CBEFD420E93848005F16B1 /* TwitterKit.framework */; };
+		B5CBEFD620E93848005F16B1 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CBEFD420E93848005F16B1 /* TwitterKit.framework */; };
+		B5CBEFD720E9384E005F16B1 /* TwitterKit.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B5CBEFD420E93848005F16B1 /* TwitterKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B5CBEFDE20E93EAC005F16B1 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CBEFDD20E93EAC005F16B1 /* TwitterCore.framework */; };
+		B5CBEFDF20E93EAC005F16B1 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CBEFDD20E93EAC005F16B1 /* TwitterCore.framework */; };
+		B5CBEFE020E93F58005F16B1 /* TwitterCore.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B5CBEFDD20E93EAC005F16B1 /* TwitterCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +77,8 @@
 			files = (
 				B599E04920E92489009EDBDC /* Identity.framework in Copy Files */,
 				B5CBEFC820E9314C005F16B1 /* FBSDKLoginKit.framework in Copy Files */,
+				B5CBEFD720E9384E005F16B1 /* TwitterKit.framework in Copy Files */,
+				B5CBEFE020E93F58005F16B1 /* TwitterCore.framework in Copy Files */,
 				B5CBEFC920E9314C005F16B1 /* FBSDKCoreKit.framework in Copy Files */,
 				B5CBEFCA20E9314C005F16B1 /* Bolts.framework in Copy Files */,
 			);
@@ -95,6 +104,9 @@
 		B5CBEFBF20E930E8005F16B1 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		B5CBEFC020E930E8005F16B1 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		B5CBEFC120E930E8005F16B1 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		B5CBEFD020E93586005F16B1 /* Twitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twitter.swift; sourceTree = "<group>"; };
+		B5CBEFD420E93848005F16B1 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		B5CBEFDD20E93EAC005F16B1 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +114,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5CBEFDF20E93EAC005F16B1 /* TwitterCore.framework in Frameworks */,
 				B5CBEFC720E9311E005F16B1 /* Bolts.framework in Frameworks */,
+				B5CBEFD620E93848005F16B1 /* TwitterKit.framework in Frameworks */,
 				B5CBEFC520E9311E005F16B1 /* FBSDKLoginKit.framework in Frameworks */,
 				B5CBEFC620E9311E005F16B1 /* FBSDKCoreKit.framework in Frameworks */,
 			);
@@ -112,7 +126,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5CBEFDE20E93EAC005F16B1 /* TwitterCore.framework in Frameworks */,
 				B5CBEFC420E930E8005F16B1 /* Bolts.framework in Frameworks */,
+				B5CBEFD520E93848005F16B1 /* TwitterKit.framework in Frameworks */,
 				B5CBEFC220E930E8005F16B1 /* FBSDKLoginKit.framework in Frameworks */,
 				B5CBEFC320E930E8005F16B1 /* FBSDKCoreKit.framework in Frameworks */,
 			);
@@ -170,6 +186,7 @@
 			children = (
 				B5CBEFAE20E92E41005F16B1 /* Enums.swift */,
 				B5CBEFB020E9301D005F16B1 /* Facebook.swift */,
+				B5CBEFD020E93586005F16B1 /* Twitter.swift */,
 			);
 			name = "Framework Code";
 			path = "Identity/Framework Code";
@@ -178,6 +195,7 @@
 		B5CBEFBD20E930E8005F16B1 /* ExternalFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B5CBEFCB20E93571005F16B1 /* Twitter */,
 				B5CBEFBE20E930E8005F16B1 /* Facebook */,
 			);
 			path = ExternalFrameworks;
@@ -191,6 +209,15 @@
 				B5CBEFC120E930E8005F16B1 /* Bolts.framework */,
 			);
 			path = Facebook;
+			sourceTree = "<group>";
+		};
+		B5CBEFCB20E93571005F16B1 /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				B5CBEFDD20E93EAC005F16B1 /* TwitterCore.framework */,
+				B5CBEFD420E93848005F16B1 /* TwitterKit.framework */,
+			);
+			path = Twitter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5CBEFAF20E92E41005F16B1 /* Enums.swift in Sources */,
+				B5CBEFD120E93586005F16B1 /* Twitter.swift in Sources */,
 				B5CBEFB120E9301D005F16B1 /* Facebook.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,6 +529,7 @@
 					"$(PROJECT_DIR)/External",
 					Frameworks/Facebook,
 					"$(PROJECT_DIR)/ExternalFrameworks/Facebook",
+					"$(PROJECT_DIR)/ExternalFrameworks/Twitter",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -542,6 +571,7 @@
 					"$(PROJECT_DIR)/External",
 					Frameworks/Facebook,
 					"$(PROJECT_DIR)/ExternalFrameworks/Facebook",
+					"$(PROJECT_DIR)/ExternalFrameworks/Twitter",
 				);
 				INFOPLIST_FILE = Identity/iOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -597,6 +627,7 @@
 					"$(PROJECT_DIR)/External",
 					Frameworks/Facebook,
 					"$(PROJECT_DIR)/ExternalFrameworks/Facebook",
+					"$(PROJECT_DIR)/ExternalFrameworks/Twitter",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = IdentityTesting/Info.plist;
@@ -634,6 +665,7 @@
 					"$(PROJECT_DIR)/External",
 					Frameworks/Facebook,
 					"$(PROJECT_DIR)/ExternalFrameworks/Facebook",
+					"$(PROJECT_DIR)/ExternalFrameworks/Twitter",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = IdentityTesting/Info.plist;

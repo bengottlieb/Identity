@@ -46,10 +46,34 @@
   <dict>
   <key>CFBundleURLSchemes</key>
   <array>
+	<string>twitterkit-mCZMP0uz35tqqrcudnjMWKJCX</string>
+  </array>
+  </dict>
+  <dict>
+  <key>CFBundleURLSchemes</key>
+  <array>
     <string>fb1982241835421974</string>
   </array>
   </dict>
 </array>
+<key>Fabric</key> <dict>
+    <key>APIKey</key>
+    <string> YOUR API KEY </string>
+    <key>Kits</key>
+    <array>
+        <dict>
+            <key>KitInfo</key>
+            <dict>
+                <key>consumerKey</key>
+                <string></string>
+                <key>consumerSecret</key>
+                <string></string>
+            </dict>
+            <key>KitName</key>
+            <string>Twitter</string>
+        </dict>
+    </array>
+</dict>
 <key>FacebookAppID</key>
 <string>1982241835421974</string>
 <key>FacebookDisplayName</key>
@@ -60,6 +84,8 @@
   <string>fb-messenger-share-api</string>
   <string>fbauth2</string>
   <string>fbshareextension</string>
+  <string>twitter</string>
+  <string>twitterauth</string>
 </array>
 </dict>
 </plist>

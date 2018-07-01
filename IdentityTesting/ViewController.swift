@@ -23,8 +23,12 @@ class ViewController: UIViewController {
 	}
 
 
-	@IBAction func login() {
+	@IBAction func loginWithFacebook() {
 		Identity.Facebook.instance.login(from: self)
+	}
+
+	@IBAction func loginWithTwitter() {
+		Identity.Twitter.instance.login(from: self)
 	}
 }
 
