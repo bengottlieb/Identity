@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		Identity.Twitter.instance.consumerKey = ""
 		Identity.Twitter.instance.consumerSecret = ""
 		Identity.Service.application(application, didFinishLaunchingWithOptions: launchOptions)
+		Identity.Service.setup(with: [.facebook, .twitter])
 		
 		return true
 	}

@@ -44,6 +44,7 @@ extension Service {
 	}
 	
 	public static func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
+		precondition(!self.providers.isEmpty, "Please add one or more Service Providers before using Identity.")
 		if self.providers.contains(.facebook) { Facebook.instance.application(application, didFinishLaunchingWithOptions: launchOptions) }
 	}
 	
