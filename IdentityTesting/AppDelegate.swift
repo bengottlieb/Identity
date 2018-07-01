@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		Identity.Twitter.instance.consumerKey = ""
 		Identity.Twitter.instance.consumerSecret = ""
-		Identity.Facebook.instance.application(application, didFinishLaunchingWithOptions: launchOptions)
+		Identity.Service.application(application, didFinishLaunchingWithOptions: launchOptions)
 		
 		return true
 	}
@@ -48,8 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 
 	func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-		if Identity.Facebook.instance.application(app, open: url, options: options) { return true }
-		
+		if Identity.Service.application(app, open: url, options: options) { return true }
+
 		return false
 	}
 }

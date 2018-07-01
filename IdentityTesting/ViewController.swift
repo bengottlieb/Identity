@@ -10,7 +10,6 @@ import UIKit
 import Identity
 
 class ViewController: UIViewController {
-	let kind = Identity.Provider.gamecenter
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -24,11 +23,17 @@ class ViewController: UIViewController {
 
 
 	@IBAction func loginWithFacebook() {
-		Identity.Facebook.instance.login(from: self)
+		Identity.Facebook.instance.login(from: self) { result, error in
+			if let info = result { print("info: \(info)") }
+			
+		}
 	}
 
 	@IBAction func loginWithTwitter() {
-		Identity.Twitter.instance.login(from: self)
+		Identity.Twitter.instance.login(from: self) { result, error in
+			if let info = result { print("info: \(info)") }
+			
+		}
 	}
 }
 

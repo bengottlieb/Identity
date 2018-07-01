@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		B52A561020E969EC00C64868 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A560F20E969EC00C64868 /* Service.swift */; };
 		B599E02B20E91451009EDBDC /* Identity.h in Headers */ = {isa = PBXBuildFile; fileRef = B599E02920E91451009EDBDC /* Identity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B599E03720E920CF009EDBDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599E03620E920CF009EDBDC /* AppDelegate.swift */; };
 		B599E03920E920CF009EDBDC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599E03820E920CF009EDBDC /* ViewController.swift */; };
@@ -28,7 +29,6 @@
 		B599E03E20E920D0009EDBDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B599E03D20E920D0009EDBDC /* Assets.xcassets */; };
 		B599E04120E920D0009EDBDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B599E03F20E920D0009EDBDC /* LaunchScreen.storyboard */; };
 		B599E04920E92489009EDBDC /* Identity.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B504E6461A8968DC001B414B /* Identity.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B5CBEFAF20E92E41005F16B1 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CBEFAE20E92E41005F16B1 /* Enums.swift */; };
 		B5CBEFB120E9301D005F16B1 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CBEFB020E9301D005F16B1 /* Facebook.swift */; };
 		B5CBEFC220E930E8005F16B1 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CBEFBF20E930E8005F16B1 /* FBSDKLoginKit.framework */; };
 		B5CBEFC320E930E8005F16B1 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CBEFC020E930E8005F16B1 /* FBSDKCoreKit.framework */; };
@@ -89,6 +89,7 @@
 
 /* Begin PBXFileReference section */
 		B504E6461A8968DC001B414B /* Identity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Identity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B52A560F20E969EC00C64868 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		B599E02920E91451009EDBDC /* Identity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Identity.h; sourceTree = "<group>"; };
 		B599E02A20E91451009EDBDC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B599E02F20E91486009EDBDC /* BuildFramework.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = BuildFramework.sh; path = Identity/BuildFramework.sh; sourceTree = "<group>"; };
@@ -99,7 +100,6 @@
 		B599E03D20E920D0009EDBDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B599E04020E920D0009EDBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B599E04220E920D0009EDBDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B5CBEFAE20E92E41005F16B1 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		B5CBEFB020E9301D005F16B1 /* Facebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
 		B5CBEFBF20E930E8005F16B1 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		B5CBEFC020E930E8005F16B1 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 		B5CBEFAD20E92E41005F16B1 /* Framework Code */ = {
 			isa = PBXGroup;
 			children = (
-				B5CBEFAE20E92E41005F16B1 /* Enums.swift */,
+				B52A560F20E969EC00C64868 /* Service.swift */,
 				B5CBEFB020E9301D005F16B1 /* Facebook.swift */,
 				B5CBEFD020E93586005F16B1 /* Twitter.swift */,
 			);
@@ -358,8 +358,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5CBEFAF20E92E41005F16B1 /* Enums.swift in Sources */,
 				B5CBEFD120E93586005F16B1 /* Twitter.swift in Sources */,
+				B52A561020E969EC00C64868 /* Service.swift in Sources */,
 				B5CBEFB120E9301D005F16B1 /* Facebook.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
