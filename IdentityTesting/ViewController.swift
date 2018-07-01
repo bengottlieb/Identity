@@ -23,5 +23,8 @@ class ViewController: UIViewController {
 	}
 
 
+	@IBAction func login() {
+		Identity.Facebook.instance.login(from: self)
+	}
 }
 
