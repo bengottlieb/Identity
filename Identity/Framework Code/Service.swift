@@ -21,12 +21,12 @@ extension Service {
 	public struct UserInformation: CustomStringConvertible, Codable {
 		public let provider: Provider
 		public let userID: String
-		public let userName: String
+		public let userName: String?
 		public let fullName: String?
 		public let email: String?
 		public let imageURL: URL?
 		
-		init(provider: Provider, userID: String, userName: String, email: String? = nil, fullName: String? = nil, imageURL: String? = nil) {
+		init(provider: Provider, userID: String, userName: String?, email: String? = nil, fullName: String? = nil, imageURL: String? = nil) {
 			self.provider = provider
 			self.userID = userID
 			self.userName = userName
@@ -36,7 +36,7 @@ extension Service {
 		}
 		
 		public var description: String {
-			return "\(self.provider) #\(self.userID): \(self.userName)"
+			return "\(self.provider) #\(self.userID): \(self.userName ?? "")"
 		}
 	}
 	
@@ -71,7 +71,7 @@ extension Service {
 }
 
 extension Service {
-	public enum Provider: String, Codable { case twitter, facebook, gamecenter, icloud, google, device }
+	public enum Provider: String, Codable { case twitter, facebook, gamecenter, cloudkit, google, device }
 	
 	static public private(set) var providers: [Provider] = []
 	public static func setup(with providers: [Provider]) {

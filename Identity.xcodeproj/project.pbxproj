@@ -59,6 +59,8 @@
 		B5E8119620E9B23800D39DD8 /* GoogleSignInDependencies.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8118B20E9B17100D39DD8 /* GoogleSignInDependencies.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5E8119820EA9FC800D39DD8 /* GameCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8119720EA9FC800D39DD8 /* GameCenter.swift */; };
 		B5E8119A20EAA4C300D39DD8 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8119920EAA4C300D39DD8 /* GameKit.framework */; };
+		B5E8119C20EAC82200D39DD8 /* CloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8119B20EAC82200D39DD8 /* CloudKit.swift */; };
+		B5E8119F20EAC86400D39DD8 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8119E20EAC86400D39DD8 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +138,9 @@
 		B5E8118C20E9B17100D39DD8 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
 		B5E8119720EA9FC800D39DD8 /* GameCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenter.swift; sourceTree = "<group>"; };
 		B5E8119920EAA4C300D39DD8 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		B5E8119B20EAC82200D39DD8 /* CloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKit.swift; sourceTree = "<group>"; };
+		B5E8119D20EAC85700D39DD8 /* IdentityTesting.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IdentityTesting.entitlements; sourceTree = "<group>"; };
+		B5E8119E20EAC86400D39DD8 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5E8119F20EAC86400D39DD8 /* CloudKit.framework in Frameworks */,
 				B5E8117E20E9A2F200D39DD8 /* CoreMedia.framework in Frameworks */,
 				B5E8117C20E9A2E900D39DD8 /* SystemConfiguration.framework in Frameworks */,
 				B5E8117B20E9A2DE00D39DD8 /* AVFoundation.framework in Frameworks */,
@@ -207,6 +213,7 @@
 		B599E03520E920CF009EDBDC /* IdentityTesting */ = {
 			isa = PBXGroup;
 			children = (
+				B5E8119D20EAC85700D39DD8 /* IdentityTesting.entitlements */,
 				B599E03620E920CF009EDBDC /* AppDelegate.swift */,
 				B599E03820E920CF009EDBDC /* ViewController.swift */,
 				B599E03A20E920CF009EDBDC /* Main.storyboard */,
@@ -225,6 +232,7 @@
 				B5CBEFD020E93586005F16B1 /* Twitter.swift */,
 				B5E8116E20E9A12400D39DD8 /* Google.swift */,
 				B5E8119720EA9FC800D39DD8 /* GameCenter.swift */,
+				B5E8119B20EAC82200D39DD8 /* CloudKit.swift */,
 			);
 			name = "Framework Code";
 			path = "Identity/Framework Code";
@@ -274,6 +282,7 @@
 		B5E8117020E9A23C00D39DD8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B5E8119E20EAC86400D39DD8 /* CloudKit.framework */,
 				B5E8119920EAA4C300D39DD8 /* GameKit.framework */,
 				B5E8117D20E9A2F200D39DD8 /* CoreMedia.framework */,
 				B5E8117A20E9A2DE00D39DD8 /* AVFoundation.framework */,
@@ -363,6 +372,12 @@
 							com.apple.GameCenter.iOS = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
 						};
 					};
 				};
@@ -435,6 +450,7 @@
 				B5CBEFD120E93586005F16B1 /* Twitter.swift in Sources */,
 				B52A561020E969EC00C64868 /* Service.swift in Sources */,
 				B5E8119820EA9FC800D39DD8 /* GameCenter.swift in Sources */,
+				B5E8119C20EAC82200D39DD8 /* CloudKit.swift in Sources */,
 				B5CBEFB120E9301D005F16B1 /* Facebook.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -682,6 +698,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = IdentityTesting/IdentityTesting.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = YY6CWUX533;
@@ -714,6 +731,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = IdentityTesting/IdentityTesting.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

@@ -35,7 +35,13 @@ class ViewController: UIViewController {
 			
 		}
 	}
-	
+
+	@IBAction func loginWithCloudKit() {
+		Identity.CloudKit.instance.login(from: self) { result, error in
+			
+		}
+	}
+
 	@IBAction func loginWithGameCenter() {
 		Identity.GameCenter.instance.login(from: self) { result, error in
 			if let info = result { print("info: \(info)") }
