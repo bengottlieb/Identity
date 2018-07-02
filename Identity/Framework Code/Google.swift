@@ -23,7 +23,8 @@ public class Google: Service {
 	}
 	
 	public func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-		precondition(!self.clientID.isEmpty, "Make sure you set a Google Login client ID before attempting to use it.")
+		assert(!self.clientID.isEmpty, "Make sure you set a Google Login client ID before attempting to use it.")
+		assert(Bundle.main.cfBundleURLs.filter({ $0.hasPrefix("com.googleusercontent.apps")}).count > 0, "No Google CFBundleURL found in the main info.plist")
 		return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[.sourceApplication] as? String, annotation: options[.annotation])
 	}
 

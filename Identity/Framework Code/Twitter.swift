@@ -46,6 +46,7 @@ extension Twitter {
 			if !failable { fatalError() }
 			return false
 		}
+		assert(Bundle.main.cfBundleURLs.filter({ "twitterkit-\(self.consumerKey)" == $0 }).count > 0, "No Twitter CFBundleURL found in the main info.plist")
 		TWTRTwitter.sharedInstance().start(withConsumerKey: self.consumerKey, consumerSecret: self.consumerSecret)
 		self.isSetup = true
 		return true

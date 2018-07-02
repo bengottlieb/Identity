@@ -17,7 +17,10 @@ public class Facebook: Service {
 		FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 	}
 	
+	
+	
 	public func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+		assert(Bundle.main.cfBundleURLs.filter({ $0.hasPrefix("fb")}).count > 0, "No Facebook CFBundleURL found in the main info.plist")
 		return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
 	}
 	
