@@ -39,6 +39,13 @@
                                     <action selector="loginWithGoogle" destination="BYZ-38-t0r" eventType="touchUpInside" id="0bE-u2-5lo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xh0-uy-rQL">
+                                <rect key="frame" x="107" y="503" width="161" height="30"/>
+                                <state key="normal" title="Login with GameCenter"/>
+                                <connections>
+                                    <action selector="loginWithGameCenter" destination="BYZ-38-t0r" eventType="touchUpInside" id="fMh-Er-ndE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -47,6 +54,8 @@
                             <constraint firstItem="7Ie-oX-lKi" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ewl-qQ-Pf1"/>
                             <constraint firstItem="4LJ-7V-r3o" firstAttribute="top" secondItem="k9H-i1-RhS" secondAttribute="bottom" constant="8" id="Wdt-5I-VLe"/>
                             <constraint firstItem="k9H-i1-RhS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Wk4-X4-snc"/>
+                            <constraint firstItem="7Ie-oX-lKi" firstAttribute="top" secondItem="Xh0-uy-rQL" secondAttribute="bottom" constant="8" id="cFC-mp-7yO"/>
+                            <constraint firstItem="Xh0-uy-rQL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ei4-pR-fI6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4LJ-7V-r3o" secondAttribute="bottom" constant="20" id="lr5-eD-rO4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

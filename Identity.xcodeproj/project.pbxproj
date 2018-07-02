@@ -57,6 +57,8 @@
 		B5E8118F20E9B17100D39DD8 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B5E8118C20E9B17100D39DD8 /* GoogleSignIn.bundle */; };
 		B5E8119520E9B22000D39DD8 /* GoogleSignIn.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8118A20E9B17100D39DD8 /* GoogleSignIn.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5E8119620E9B23800D39DD8 /* GoogleSignInDependencies.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8118B20E9B17100D39DD8 /* GoogleSignInDependencies.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B5E8119820EA9FC800D39DD8 /* GameCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8119720EA9FC800D39DD8 /* GameCenter.swift */; };
+		B5E8119A20EAA4C300D39DD8 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8119920EAA4C300D39DD8 /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,8 @@
 		B5E8118A20E9B17100D39DD8 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
 		B5E8118B20E9B17100D39DD8 /* GoogleSignInDependencies.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignInDependencies.framework; sourceTree = "<group>"; };
 		B5E8118C20E9B17100D39DD8 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
+		B5E8119720EA9FC800D39DD8 /* GameCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenter.swift; sourceTree = "<group>"; };
+		B5E8119920EAA4C300D39DD8 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 				B5E8117E20E9A2F200D39DD8 /* CoreMedia.framework in Frameworks */,
 				B5E8117C20E9A2E900D39DD8 /* SystemConfiguration.framework in Frameworks */,
 				B5E8117B20E9A2DE00D39DD8 /* AVFoundation.framework in Frameworks */,
+				B5E8119A20EAA4C300D39DD8 /* GameKit.framework in Frameworks */,
 				B5E8117920E9A2CD00D39DD8 /* Social.framework in Frameworks */,
 				B5E8117720E9A2C400D39DD8 /* CoreData.framework in Frameworks */,
 			);
@@ -219,6 +224,7 @@
 				B5CBEFB020E9301D005F16B1 /* Facebook.swift */,
 				B5CBEFD020E93586005F16B1 /* Twitter.swift */,
 				B5E8116E20E9A12400D39DD8 /* Google.swift */,
+				B5E8119720EA9FC800D39DD8 /* GameCenter.swift */,
 			);
 			name = "Framework Code";
 			path = "Identity/Framework Code";
@@ -268,6 +274,7 @@
 		B5E8117020E9A23C00D39DD8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B5E8119920EAA4C300D39DD8 /* GameKit.framework */,
 				B5E8117D20E9A2F200D39DD8 /* CoreMedia.framework */,
 				B5E8117A20E9A2DE00D39DD8 /* AVFoundation.framework */,
 				B5E8117820E9A2CD00D39DD8 /* Social.framework */,
@@ -352,6 +359,11 @@
 						CreatedOnToolsVersion = 9.4;
 						DevelopmentTeam = YY6CWUX533;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -422,6 +434,7 @@
 				B5E8116F20E9A12400D39DD8 /* Google.swift in Sources */,
 				B5CBEFD120E93586005F16B1 /* Twitter.swift in Sources */,
 				B52A561020E969EC00C64868 /* Service.swift in Sources */,
+				B5E8119820EA9FC800D39DD8 /* GameCenter.swift in Sources */,
 				B5CBEFB120E9301D005F16B1 /* Facebook.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

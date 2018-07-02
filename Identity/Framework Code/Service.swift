@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GameKit
 
 public class Service: NSObject {
 	public typealias LoginCompletion = (UserInformation?, Error?) -> Void
@@ -44,6 +45,28 @@ extension Service {
 		public let userID: String
 		
 		public var description: String { return "\(self.name ?? "unknown name"): \(self.userID)" }
+		
+		init?(facebookInfo: [String: Any]) {
+			self.name = facebookInfo["name"] as? String
+			self.userID = facebookInfo["id"] as? String ?? ""
+			if self.userID == "" { return nil }
+		}
+		
+		init?(twitterInfo: [String: Any]) {
+			self.name = twitterInfo["name"] as? String
+			if let userId = twitterInfo["id"] as? Int {
+				self.userID = "\(userId)"
+			} else {
+				self.userID = ""
+				return nil
+			}
+		}
+
+		init?(gkPlayer: GKPlayer) {
+			self.name = gkPlayer.displayName
+			self.userID = gkPlayer.playerID ?? ""
+			if self.userID.isEmpty { return nil }
+		}
 	}
 }
 

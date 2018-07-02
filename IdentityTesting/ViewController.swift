@@ -33,9 +33,18 @@ class ViewController: UIViewController {
 		Identity.Google.instance.login(from: self) { result, error in
 			if let info = result { print("info: \(info)") }
 			
-		} 
+		}
 	}
 	
+	@IBAction func loginWithGameCenter() {
+		Identity.GameCenter.instance.login(from: self) { result, error in
+			if let info = result { print("info: \(info)") }
+			Identity.GameCenter.instance.fetchFriends(completion: { friends, error in
+				print("Friends: \(friends!)")
+			})
+		}
+	}
+
 	@IBAction func loginWithTwitter() {
 		Identity.Twitter.instance.login(from: self) { result, error in
 			if let info = result { print("info: \(info)") }
