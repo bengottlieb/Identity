@@ -28,7 +28,14 @@ class ViewController: UIViewController {
 			
 		}
 	}
-
+	
+	@IBAction func loginWithGoogle() {
+		Identity.Google.instance.login(from: self) { result, error in
+			if let info = result { print("info: \(info)") }
+			
+		}
+	}
+	
 	@IBAction func loginWithTwitter() {
 		Identity.Twitter.instance.login(from: self) { result, error in
 			if let info = result { print("info: \(info)") }

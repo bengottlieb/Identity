@@ -30,26 +30,33 @@
 		B599E04120E920D0009EDBDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B599E03F20E920D0009EDBDC /* LaunchScreen.storyboard */; };
 		B599E04920E92489009EDBDC /* Identity.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B504E6461A8968DC001B414B /* Identity.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5CBEFB120E9301D005F16B1 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CBEFB020E9301D005F16B1 /* Facebook.swift */; };
-		B5CBEFC220E930E8005F16B1 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CBEFBF20E930E8005F16B1 /* FBSDKLoginKit.framework */; };
-		B5CBEFC320E930E8005F16B1 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CBEFC020E930E8005F16B1 /* FBSDKCoreKit.framework */; };
-		B5CBEFC420E930E8005F16B1 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CBEFC120E930E8005F16B1 /* Bolts.framework */; };
 		B5CBEFC520E9311E005F16B1 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CBEFBF20E930E8005F16B1 /* FBSDKLoginKit.framework */; };
-		B5CBEFC620E9311E005F16B1 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CBEFC020E930E8005F16B1 /* FBSDKCoreKit.framework */; };
+		B5CBEFC620E9311E005F16B1 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CBEFC020E930E8005F16B1 /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B5CBEFC720E9311E005F16B1 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CBEFC120E930E8005F16B1 /* Bolts.framework */; };
 		B5CBEFC820E9314C005F16B1 /* FBSDKLoginKit.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B5CBEFBF20E930E8005F16B1 /* FBSDKLoginKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5CBEFC920E9314C005F16B1 /* FBSDKCoreKit.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B5CBEFC020E930E8005F16B1 /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5CBEFCA20E9314C005F16B1 /* Bolts.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B5CBEFC120E930E8005F16B1 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5CBEFD120E93586005F16B1 /* Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CBEFD020E93586005F16B1 /* Twitter.swift */; };
-		B5E8115820E9986D00D39DD8 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8115420E9986C00D39DD8 /* TwitterCore.framework */; };
-		B5E8115920E9986D00D39DD8 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8115420E9986C00D39DD8 /* TwitterCore.framework */; };
-		B5E8115A20E9986D00D39DD8 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8115520E9986C00D39DD8 /* TwitterKit.framework */; };
-		B5E8115B20E9986D00D39DD8 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8115520E9986C00D39DD8 /* TwitterKit.framework */; };
-		B5E8115C20E9986D00D39DD8 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B5E8115620E9986C00D39DD8 /* TwitterKitResources.bundle */; };
-		B5E8115D20E9986D00D39DD8 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B5E8115620E9986C00D39DD8 /* TwitterKitResources.bundle */; };
-		B5E8115E20E9986D00D39DD8 /* TwitterShareExtensionUIResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B5E8115720E9986C00D39DD8 /* TwitterShareExtensionUIResources.bundle */; };
-		B5E8115F20E9986D00D39DD8 /* TwitterShareExtensionUIResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B5E8115720E9986C00D39DD8 /* TwitterShareExtensionUIResources.bundle */; };
-		B5E8116020E9987B00D39DD8 /* TwitterCore.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B5E8115420E9986C00D39DD8 /* TwitterCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B5E8116120E9987B00D39DD8 /* TwitterKit.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B5E8115520E9986C00D39DD8 /* TwitterKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B5E8116F20E9A12400D39DD8 /* Google.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8116E20E9A12400D39DD8 /* Google.swift */; };
+		B5E8117220E9A23C00D39DD8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8117120E9A23C00D39DD8 /* SystemConfiguration.framework */; };
+		B5E8117420E9A24300D39DD8 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8117320E9A24300D39DD8 /* SafariServices.framework */; };
+		B5E8117620E9A2B700D39DD8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8117520E9A2B700D39DD8 /* CoreData.framework */; };
+		B5E8117720E9A2C400D39DD8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8117520E9A2B700D39DD8 /* CoreData.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B5E8117920E9A2CD00D39DD8 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8117820E9A2CD00D39DD8 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B5E8117B20E9A2DE00D39DD8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8117A20E9A2DE00D39DD8 /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B5E8117C20E9A2E900D39DD8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8117120E9A23C00D39DD8 /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B5E8117E20E9A2F200D39DD8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8117D20E9A2F200D39DD8 /* CoreMedia.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B5E8118420E9B0E800D39DD8 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8115420E9986C00D39DD8 /* TwitterCore.framework */; };
+		B5E8118520E9B0E800D39DD8 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8115520E9986C00D39DD8 /* TwitterKit.framework */; };
+		B5E8118620E9B12600D39DD8 /* TwitterCore.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B5E8115420E9986C00D39DD8 /* TwitterCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B5E8118720E9B12600D39DD8 /* TwitterKit.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B5E8115520E9986C00D39DD8 /* TwitterKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B5E8118820E9B14900D39DD8 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B5E8115620E9986C00D39DD8 /* TwitterKitResources.bundle */; };
+		B5E8118920E9B14900D39DD8 /* TwitterShareExtensionUIResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B5E8115720E9986C00D39DD8 /* TwitterShareExtensionUIResources.bundle */; };
+		B5E8118D20E9B17100D39DD8 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8118A20E9B17100D39DD8 /* GoogleSignIn.framework */; };
+		B5E8118E20E9B17100D39DD8 /* GoogleSignInDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8118B20E9B17100D39DD8 /* GoogleSignInDependencies.framework */; };
+		B5E8118F20E9B17100D39DD8 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B5E8118C20E9B17100D39DD8 /* GoogleSignIn.bundle */; };
+		B5E8119520E9B22000D39DD8 /* GoogleSignIn.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8118A20E9B17100D39DD8 /* GoogleSignIn.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B5E8119620E9B23800D39DD8 /* GoogleSignInDependencies.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8118B20E9B17100D39DD8 /* GoogleSignInDependencies.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +76,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B5E8119520E9B22000D39DD8 /* GoogleSignIn.framework in Copy Frameworks */,
+				B5E8119620E9B23800D39DD8 /* GoogleSignInDependencies.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,11 +88,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B5E8118620E9B12600D39DD8 /* TwitterCore.framework in Copy Files */,
+				B5E8118720E9B12600D39DD8 /* TwitterKit.framework in Copy Files */,
 				B599E04920E92489009EDBDC /* Identity.framework in Copy Files */,
 				B5CBEFC820E9314C005F16B1 /* FBSDKLoginKit.framework in Copy Files */,
 				B5CBEFC920E9314C005F16B1 /* FBSDKCoreKit.framework in Copy Files */,
-				B5E8116020E9987B00D39DD8 /* TwitterCore.framework in Copy Files */,
-				B5E8116120E9987B00D39DD8 /* TwitterKit.framework in Copy Files */,
 				B5CBEFCA20E9314C005F16B1 /* Bolts.framework in Copy Files */,
 			);
 			name = "Copy Files";
@@ -113,6 +122,16 @@
 		B5E8115520E9986C00D39DD8 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		B5E8115620E9986C00D39DD8 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
 		B5E8115720E9986C00D39DD8 /* TwitterShareExtensionUIResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterShareExtensionUIResources.bundle; sourceTree = "<group>"; };
+		B5E8116E20E9A12400D39DD8 /* Google.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Google.swift; sourceTree = "<group>"; };
+		B5E8117120E9A23C00D39DD8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B5E8117320E9A24300D39DD8 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		B5E8117520E9A2B700D39DD8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B5E8117820E9A2CD00D39DD8 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		B5E8117A20E9A2DE00D39DD8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B5E8117D20E9A2F200D39DD8 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		B5E8118A20E9B17100D39DD8 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
+		B5E8118B20E9B17100D39DD8 /* GoogleSignInDependencies.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignInDependencies.framework; sourceTree = "<group>"; };
+		B5E8118C20E9B17100D39DD8 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,10 +139,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5E8117620E9A2B700D39DD8 /* CoreData.framework in Frameworks */,
+				B5E8117420E9A24300D39DD8 /* SafariServices.framework in Frameworks */,
+				B5E8118420E9B0E800D39DD8 /* TwitterCore.framework in Frameworks */,
+				B5E8118520E9B0E800D39DD8 /* TwitterKit.framework in Frameworks */,
+				B5E8117220E9A23C00D39DD8 /* SystemConfiguration.framework in Frameworks */,
 				B5CBEFC720E9311E005F16B1 /* Bolts.framework in Frameworks */,
-				B5E8115B20E9986D00D39DD8 /* TwitterKit.framework in Frameworks */,
-				B5E8115920E9986D00D39DD8 /* TwitterCore.framework in Frameworks */,
 				B5CBEFC520E9311E005F16B1 /* FBSDKLoginKit.framework in Frameworks */,
+				B5E8118D20E9B17100D39DD8 /* GoogleSignIn.framework in Frameworks */,
+				B5E8118E20E9B17100D39DD8 /* GoogleSignInDependencies.framework in Frameworks */,
 				B5CBEFC620E9311E005F16B1 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,11 +156,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5CBEFC420E930E8005F16B1 /* Bolts.framework in Frameworks */,
-				B5E8115A20E9986D00D39DD8 /* TwitterKit.framework in Frameworks */,
-				B5E8115820E9986D00D39DD8 /* TwitterCore.framework in Frameworks */,
-				B5CBEFC220E930E8005F16B1 /* FBSDKLoginKit.framework in Frameworks */,
-				B5CBEFC320E930E8005F16B1 /* FBSDKCoreKit.framework in Frameworks */,
+				B5E8117E20E9A2F200D39DD8 /* CoreMedia.framework in Frameworks */,
+				B5E8117C20E9A2E900D39DD8 /* SystemConfiguration.framework in Frameworks */,
+				B5E8117B20E9A2DE00D39DD8 /* AVFoundation.framework in Frameworks */,
+				B5E8117920E9A2CD00D39DD8 /* Social.framework in Frameworks */,
+				B5E8117720E9A2C400D39DD8 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +176,7 @@
 				B599E02820E91451009EDBDC /* iOS */,
 				B599E03520E920CF009EDBDC /* IdentityTesting */,
 				B504E6141A89230F001B414B /* Products */,
+				B5E8117020E9A23C00D39DD8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -193,6 +218,7 @@
 				B52A560F20E969EC00C64868 /* Service.swift */,
 				B5CBEFB020E9301D005F16B1 /* Facebook.swift */,
 				B5CBEFD020E93586005F16B1 /* Twitter.swift */,
+				B5E8116E20E9A12400D39DD8 /* Google.swift */,
 			);
 			name = "Framework Code";
 			path = "Identity/Framework Code";
@@ -201,6 +227,7 @@
 		B5CBEFBD20E930E8005F16B1 /* ExternalFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B5E8116220E9A0F000D39DD8 /* Google */,
 				B5E8115320E9986C00D39DD8 /* Twitter */,
 				B5CBEFBE20E930E8005F16B1 /* Facebook */,
 			);
@@ -226,6 +253,29 @@
 				B5E8115720E9986C00D39DD8 /* TwitterShareExtensionUIResources.bundle */,
 			);
 			path = Twitter;
+			sourceTree = "<group>";
+		};
+		B5E8116220E9A0F000D39DD8 /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				B5E8118C20E9B17100D39DD8 /* GoogleSignIn.bundle */,
+				B5E8118A20E9B17100D39DD8 /* GoogleSignIn.framework */,
+				B5E8118B20E9B17100D39DD8 /* GoogleSignInDependencies.framework */,
+			);
+			path = Google;
+			sourceTree = "<group>";
+		};
+		B5E8117020E9A23C00D39DD8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5E8117D20E9A2F200D39DD8 /* CoreMedia.framework */,
+				B5E8117A20E9A2DE00D39DD8 /* AVFoundation.framework */,
+				B5E8117820E9A2CD00D39DD8 /* Social.framework */,
+				B5E8117520E9A2B700D39DD8 /* CoreData.framework */,
+				B5E8117320E9A24300D39DD8 /* SafariServices.framework */,
+				B5E8117120E9A23C00D39DD8 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +380,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5E8118820E9B14900D39DD8 /* TwitterKitResources.bundle in Resources */,
+				B5E8118920E9B14900D39DD8 /* TwitterShareExtensionUIResources.bundle in Resources */,
+				B5E8118F20E9B17100D39DD8 /* GoogleSignIn.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,11 +390,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5E8115C20E9986D00D39DD8 /* TwitterKitResources.bundle in Resources */,
 				B599E04120E920D0009EDBDC /* LaunchScreen.storyboard in Resources */,
 				B599E03E20E920D0009EDBDC /* Assets.xcassets in Resources */,
 				B599E03C20E920CF009EDBDC /* Main.storyboard in Resources */,
-				B5E8115E20E9986D00D39DD8 /* TwitterShareExtensionUIResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5E8116F20E9A12400D39DD8 /* Google.swift in Sources */,
 				B5CBEFD120E93586005F16B1 /* Twitter.swift in Sources */,
 				B52A561020E969EC00C64868 /* Service.swift in Sources */,
 				B5CBEFB120E9301D005F16B1 /* Facebook.swift in Sources */,
@@ -534,6 +586,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ExternalFrameworks/Facebook",
 					"$(PROJECT_DIR)/ExternalFrameworks/Twitter",
+					"$(PROJECT_DIR)/ExternalFrameworks/Google",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -543,6 +596,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.standalone.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Identity;
 				SKIP_INSTALL = YES;
@@ -570,11 +624,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ExternalFrameworks/Facebook",
 					"$(PROJECT_DIR)/ExternalFrameworks/Twitter",
+					"$(PROJECT_DIR)/ExternalFrameworks/Google",
 				);
 				INFOPLIST_FILE = Identity/iOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.standalone.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Identity;
 				SKIP_INSTALL = YES;
@@ -620,6 +676,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ExternalFrameworks/Facebook",
 					"$(PROJECT_DIR)/ExternalFrameworks/Twitter",
+					"$(PROJECT_DIR)/ExternalFrameworks/Google",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = IdentityTesting/Info.plist;
@@ -652,6 +709,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ExternalFrameworks/Facebook",
 					"$(PROJECT_DIR)/ExternalFrameworks/Twitter",
+					"$(PROJECT_DIR)/ExternalFrameworks/Google",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = IdentityTesting/Info.plist;

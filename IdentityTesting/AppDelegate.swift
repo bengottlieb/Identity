@@ -18,10 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
 		
+		Identity.Service.setup(with: [.google])
+
+		Identity.Google.instance.clientID = ""
 		Identity.Twitter.instance.consumerKey = ""
 		Identity.Twitter.instance.consumerSecret = ""
+
 		Identity.Service.application(application, didFinishLaunchingWithOptions: launchOptions)
-		Identity.Service.setup(with: [.facebook, .twitter])
+		
+		
 		
 		return true
 	}

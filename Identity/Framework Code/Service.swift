@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Service {
+public class Service: NSObject {
 	public typealias LoginCompletion = (UserInformation?, Error?) -> Void
 	
 	public func login(from: UIViewController, completion: @escaping LoginCompletion) {}
@@ -46,11 +46,13 @@ extension Service {
 	public static func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
 		precondition(!self.providers.isEmpty, "Please add one or more Service Providers before using Identity.")
 		if self.providers.contains(.facebook) { Facebook.instance.application(application, didFinishLaunchingWithOptions: launchOptions) }
+		if self.providers.contains(.google) { Google.instance.application(application, didFinishLaunchingWithOptions: launchOptions) }
 	}
 	
 	public static func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
 		if self.providers.contains(.facebook), Facebook.instance.application(app, open: url, options: options) { return true }
 		if self.providers.contains(.twitter), Twitter.instance.application(app, open: url, options: options) { return true }
+		if self.providers.contains(.google), Google.instance.application(app, open: url, options: options) { return true }
 
 		return false
 	}
