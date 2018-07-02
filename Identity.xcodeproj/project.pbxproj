@@ -330,8 +330,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5E8115D20E9986D00D39DD8 /* TwitterKitResources.bundle in Resources */,
-				B5E8115F20E9986D00D39DD8 /* TwitterShareExtensionUIResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,12 +532,6 @@
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/External",
-					Frameworks/Facebook,
-					"$(PROJECT_DIR)/External",
-					Frameworks/Facebook,
-					"$(PROJECT_DIR)/External",
-					Frameworks/Facebook,
 					"$(PROJECT_DIR)/ExternalFrameworks/Facebook",
 					"$(PROJECT_DIR)/ExternalFrameworks/Twitter",
 				);
@@ -576,12 +568,6 @@
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/External",
-					Frameworks/Facebook,
-					"$(PROJECT_DIR)/External",
-					Frameworks/Facebook,
-					"$(PROJECT_DIR)/External",
-					Frameworks/Facebook,
 					"$(PROJECT_DIR)/ExternalFrameworks/Facebook",
 					"$(PROJECT_DIR)/ExternalFrameworks/Twitter",
 				);
@@ -632,12 +618,6 @@
 				DEVELOPMENT_TEAM = YY6CWUX533;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/External",
-					Frameworks/Facebook,
-					"$(PROJECT_DIR)/External",
-					Frameworks/Facebook,
-					"$(PROJECT_DIR)/External",
-					Frameworks/Facebook,
 					"$(PROJECT_DIR)/ExternalFrameworks/Facebook",
 					"$(PROJECT_DIR)/ExternalFrameworks/Twitter",
 				);
@@ -670,12 +650,6 @@
 				DEVELOPMENT_TEAM = YY6CWUX533;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/External",
-					Frameworks/Facebook,
-					"$(PROJECT_DIR)/External",
-					Frameworks/Facebook,
-					"$(PROJECT_DIR)/External",
-					Frameworks/Facebook,
 					"$(PROJECT_DIR)/ExternalFrameworks/Facebook",
 					"$(PROJECT_DIR)/ExternalFrameworks/Twitter",
 				);
