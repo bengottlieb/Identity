@@ -10,9 +10,10 @@ import Foundation
 
 public class Service: NSObject {
 	public typealias LoginCompletion = (UserInformation?, Error?) -> Void
+	public typealias FetchFriendsCompletion = ([FriendInformation]?, Error?) -> Void
 	
 	public func login(from: UIViewController, completion: @escaping LoginCompletion) {}
-
+	public func fetchFriends(completion: @escaping FetchFriendsCompletion) {}
 }
 
 extension Service {
@@ -20,18 +21,29 @@ extension Service {
 		public let provider: Provider
 		public let userID: String
 		public let userName: String
+		public let fullName: String?
+		public let email: String?
 		public let imageURL: URL?
 		
-		init(provider: Provider, userID: String, userName: String, imageURL: String? = nil) {
+		init(provider: Provider, userID: String, userName: String, email: String? = nil, fullName: String? = nil, imageURL: String? = nil) {
 			self.provider = provider
 			self.userID = userID
 			self.userName = userName
+			self.email = email
+			self.fullName = fullName
 			self.imageURL = imageURL == nil ? nil : URL(string: imageURL!)
 		}
 		
 		public var description: String {
 			return "\(self.provider) #\(self.userID): \(self.userName)"
 		}
+	}
+	
+	public struct FriendInformation: CustomStringConvertible, Codable {
+		public let name: String?
+		public let userID: String
+		
+		public var description: String { return "\(self.name ?? "unknown name"): \(self.userID)" }
 	}
 }
 
