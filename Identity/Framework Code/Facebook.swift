@@ -16,6 +16,16 @@ extension Service.FriendInformation {
 		self.userID = facebookInfo["id"] as? String ?? ""
 		if self.userID == "" { return nil }
 	}
+
+	init?(twitterInfo: [String: Any]) {
+		self.name = twitterInfo["name"] as? String
+		if let userId = twitterInfo["id"] as? Int {
+			self.userID = "\(userId)"
+		} else {
+			self.userID = ""
+			return nil
+		}
+	}
 }
 
 public class Facebook: Service {

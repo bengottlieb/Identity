@@ -33,13 +33,15 @@ class ViewController: UIViewController {
 		Identity.Google.instance.login(from: self) { result, error in
 			if let info = result { print("info: \(info)") }
 			
-		}
+		} 
 	}
 	
 	@IBAction func loginWithTwitter() {
 		Identity.Twitter.instance.login(from: self) { result, error in
 			if let info = result { print("info: \(info)") }
-			
+			Identity.Twitter.instance.fetchFriends(completion: { friends, error in
+				
+			})
 		}
 	}
 }
