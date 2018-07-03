@@ -30,9 +30,6 @@
 		B599E04120E920D0009EDBDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B599E03F20E920D0009EDBDC /* LaunchScreen.storyboard */; };
 		B599E04920E92489009EDBDC /* Identity.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B504E6461A8968DC001B414B /* Identity.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5CBEFB120E9301D005F16B1 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CBEFB020E9301D005F16B1 /* Facebook.swift */; };
-		B5CBEFC520E9311E005F16B1 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CBEFBF20E930E8005F16B1 /* FBSDKLoginKit.framework */; };
-		B5CBEFC620E9311E005F16B1 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CBEFC020E930E8005F16B1 /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		B5CBEFC720E9311E005F16B1 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CBEFC120E930E8005F16B1 /* Bolts.framework */; };
 		B5CBEFD120E93586005F16B1 /* Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CBEFD020E93586005F16B1 /* Twitter.swift */; };
 		B5E8116F20E9A12400D39DD8 /* Google.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8116E20E9A12400D39DD8 /* Google.swift */; };
 		B5E8117220E9A23C00D39DD8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8117120E9A23C00D39DD8 /* SystemConfiguration.framework */; };
@@ -110,9 +107,6 @@
 		B599E04020E920D0009EDBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B599E04220E920D0009EDBDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5CBEFB020E9301D005F16B1 /* Facebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
-		B5CBEFBF20E930E8005F16B1 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		B5CBEFC020E930E8005F16B1 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		B5CBEFC120E930E8005F16B1 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		B5CBEFD020E93586005F16B1 /* Twitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twitter.swift; sourceTree = "<group>"; };
 		B5E8115420E9986C00D39DD8 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		B5E8115520E9986C00D39DD8 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
@@ -146,12 +140,9 @@
 				B5E811C320EB143000D39DD8 /* TwitterKit.framework in Frameworks */,
 				B5E8117420E9A24300D39DD8 /* SafariServices.framework in Frameworks */,
 				B5E8117220E9A23C00D39DD8 /* SystemConfiguration.framework in Frameworks */,
-				B5CBEFC720E9311E005F16B1 /* Bolts.framework in Frameworks */,
 				B5E811C220EB143000D39DD8 /* TwitterCore.framework in Frameworks */,
-				B5CBEFC520E9311E005F16B1 /* FBSDKLoginKit.framework in Frameworks */,
 				B5E8118D20E9B17100D39DD8 /* GoogleSignIn.framework in Frameworks */,
 				B5E8118E20E9B17100D39DD8 /* GoogleSignInDependencies.framework in Frameworks */,
-				B5CBEFC620E9311E005F16B1 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,9 +238,6 @@
 		B5CBEFBE20E930E8005F16B1 /* Facebook */ = {
 			isa = PBXGroup;
 			children = (
-				B5CBEFBF20E930E8005F16B1 /* FBSDKLoginKit.framework */,
-				B5CBEFC020E930E8005F16B1 /* FBSDKCoreKit.framework */,
-				B5CBEFC120E930E8005F16B1 /* Bolts.framework */,
 			);
 			path = Facebook;
 			sourceTree = "<group>";
