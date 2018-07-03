@@ -16,7 +16,8 @@ public class Google: Service {
 	
 	var host: UIViewController?
 	var completion: LoginCompletion?
-	
+	override var provider: Provider { return .google }
+
 	public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
 		GIDSignIn.sharedInstance().clientID = self.clientID
 		GIDSignIn.sharedInstance().delegate = self

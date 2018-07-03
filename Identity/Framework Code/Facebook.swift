@@ -12,7 +12,9 @@ import FBSDKLoginKit
 
 public class Facebook: Service {
 	public static let instance = Facebook()
-	
+	var completions: [LoginCompletion] = []
+	override var provider: Provider { return .facebook }
+
 	public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
 		FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 		
@@ -37,6 +39,18 @@ public class Facebook: Service {
 		assert(Service.providers.contains(.facebook), "You're trying to access Facebook without setting it as a provider. Call 'Service.setup(with: [.facebook]).")
 		let loginManager = FBSDKLoginManager()
 		
+		if self.completions.count > 0 {
+			self.completions.append({ id, error in
+				if id == nil {
+					self.signIn(from: from, completion: completion)
+				} else {
+					completion(id, error)
+				}
+			})
+			return
+		}
+
+		
 		loginManager.logIn(withReadPermissions: self.perms, from: from) { result, error in
 			if result != nil {
 				self.requestUserInfo(completion: completion)
@@ -47,6 +61,12 @@ public class Facebook: Service {
 	}
 	
 	func requestUserInfo(completion: @escaping LoginCompletion) {
+		if self.completions.count > 0 {
+			self.completions.append(completion)
+			return
+		}
+		
+		self.completions = [completion]
 		let infoRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, friends"], httpMethod: "GET")
 		_ = infoRequest?.start() { connection, result, error in
 			if let json = result as? [String: Any] {
@@ -59,11 +79,20 @@ public class Facebook: Service {
 				}
 				
 				self.userInformation = UserInformation(provider: .facebook, userID: userID, userName: name, imageURL: imageURL)
+				self.callCompletions(with: nil)
 				completion(self.userInformation, nil)
 			} else {
-				completion(nil, error)
+				self.callCompletions(with: error)
 			}
 		}
+	}
+	
+	func callCompletions(with error: Error?) {
+		let completions = self.completions
+		self.completions = []
+		
+		completions.forEach { $0(self.userInformation, error) }
+		
 	}
 
 }

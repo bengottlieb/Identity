@@ -11,6 +11,7 @@ import CloudKit
 
 public class CloudKit: Service {
 	public static let instance = CloudKit()
+	override var provider: Provider { return .cloudkit }
 
 	public override func signIn(from sourceController: UIViewController?, completion: @escaping LoginCompletion) {
 		CKContainer.default().fetchUserRecordID { id, error in

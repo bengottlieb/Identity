@@ -13,8 +13,8 @@ public class Twitter: Service {
 	public static let instance = Twitter()
 	public var consumerKey: String = ""
 	public var consumerSecret: String = ""
-	
-	var userID: String?
+	override var provider: Provider { return .twitter }
+
 	var isSetup = false
 
 	public func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -29,7 +29,7 @@ public class Twitter: Service {
 	}
 	
 	func fetchFriends(startingAt cursor: Int?, found: [FriendInformation] = [], completion: @escaping FetchFriendsCompletion) {
-		let client = TWTRAPIClient(userID: self.userID)
+		let client = TWTRAPIClient(userID: self.userInformation?.userID)
 		var error: NSError?
 		var params = ["count": "200"]
 		if let cursor = cursor { params["cursor"] = "\(cursor)" }
@@ -54,12 +54,18 @@ public class Twitter: Service {
 	override public func signIn(from: UIViewController?, completion: @escaping LoginCompletion) {
 		assert(Service.providers.contains(.twitter), "You're trying to access Twitter without setting it as a provider. Call 'Service.setup(with: [.twitter]).")
 		self.setup(failable: false)
+
+		
+		if let current = self.userInformation {
+			completion(current, nil)
+			return
+		}
+
 		TWTRTwitter.sharedInstance().logIn(with: from) { session, error in
 			if let err = error as NSError?, err.domain == "TWTRNetworkingErrorDomain" {
 				print("************************\nPlease make sure you have the proper URL schemes configured in your plist, and that you have the right callback URL set on Twitter's app configuration page (https://apps.twitter.com). It should be the same one from your plist, ”twitterkit-\(self.consumerKey)://“.")
 			}
 			
-			self.userID = session?.userID
 			if let session = session {
 				self.userInformation = UserInformation(provider: .twitter, userID: session.userID, userName: session.userName)
 				completion(self.userInformation, nil)

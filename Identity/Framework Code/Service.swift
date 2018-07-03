@@ -10,15 +10,34 @@ import Foundation
 import GameKit
 
 public class Service: NSObject {
-	public var userInformation: UserInformation?
+	public static var currentIdentityDefaultsKey = "identity-current"
+	public var userInformation: UserInformation? { didSet {
+		if let info = self.userInformation, let data = try? JSONEncoder().encode(info) {
+			UserDefaults.standard.set(data, forKey: Service.currentIdentityDefaultsKey)
+		} else {
+			UserDefaults.standard.removeObject(forKey: Service.currentIdentityDefaultsKey)
+		}
+	}}
+	
+	override init() {
+		super.init()
+		if let data = UserDefaults.standard.data(forKey: Service.currentIdentityDefaultsKey) {
+			if let userInfo = try? JSONDecoder().decode(UserInformation.self, from: data), userInfo.provider == self.provider { self.userInformation = userInfo }
+		}
+	}
 	
 	public var isSignedIn: Bool { return self.userInformation != nil }
+	var provider: Provider { return .none }
 	
 	public typealias LoginCompletion = (UserInformation?, Error?) -> Void
 	public typealias FetchFriendsCompletion = ([FriendInformation]?, Error?) -> Void
 	
 	public func signIn(from: UIViewController?, completion: @escaping LoginCompletion) {}
 	public func fetchFriends(completion: @escaping FetchFriendsCompletion) {}
+	
+	public func signOut() {
+		self.userInformation = nil
+	}
 }
 
 extension Service {
@@ -75,7 +94,7 @@ extension Service {
 }
 
 extension Service {
-	public enum Provider: String, Codable { case twitter, facebook, gamecenter, cloudkit, google, device, anonymous }
+	public enum Provider: String, Codable { case none, twitter, facebook, gamecenter, cloudkit, google, device, anonymous }
 	
 	static public private(set) var providers: [Provider] = []
 	public static func setup(with providers: [Provider]) {

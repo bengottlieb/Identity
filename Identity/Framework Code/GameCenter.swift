@@ -18,7 +18,8 @@ public class GameCenter: Service {
 	weak var signInController: UIViewController?
 	var localPlayerID: String?
 	var localPlayerName: String?
-	
+	override var provider: Provider { return .gamecenter }
+
 	override public func fetchFriends(completion: @escaping Service.FetchFriendsCompletion) {
 		if #available(iOSApplicationExtension 10.0, *) {
 			GKLocalPlayer.localPlayer().loadRecentPlayers() { players, error in

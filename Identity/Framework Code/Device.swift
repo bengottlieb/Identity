@@ -10,7 +10,8 @@ import Foundation
 
 public class Device: Service {
 	public static let instance = Device()
-	
+	override var provider: Provider { return .device }
+
 	enum Error: String, Swift.Error { case unableToFetchVendorID }
 	
 	public override func signIn(from sourceController: UIViewController?, completion: @escaping LoginCompletion) {
