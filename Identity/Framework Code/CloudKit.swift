@@ -12,10 +12,7 @@ import CloudKit
 public class CloudKit: Service {
 	public static let instance = CloudKit()
 
-	override public func fetchFriends(completion: @escaping Service.FetchFriendsCompletion) {
-	}
-	
-	public override func login(from sourceController: UIViewController, completion: @escaping LoginCompletion) {
+	public override func login(from sourceController: UIViewController?, completion: @escaping LoginCompletion) {
 		CKContainer.default().fetchUserRecordID { id, error in
 			if let id = id {
 				completion(UserInformation(provider: .cloudkit, userID: id.recordName, userName: nil), nil)

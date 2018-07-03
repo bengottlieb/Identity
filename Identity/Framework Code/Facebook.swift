@@ -28,7 +28,7 @@ public class Facebook: Service {
 		completion(self.friends?.compactMap { FriendInformation(facebookInfo: $0) }, nil)
 	}
 	
-	public override func login(from: UIViewController, completion: @escaping LoginCompletion) {
+	public override func login(from: UIViewController?, completion: @escaping LoginCompletion) {
 		assert(Service.providers.contains(.google), "You're trying to access Facebook without setting it as a provider. Call 'Service.setup(with: [.facebook]).")
 		let perms = ["user_friends", "email", "public_profile"]
 		let loginManager = FBSDKLoginManager()

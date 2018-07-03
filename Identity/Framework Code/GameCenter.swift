@@ -26,7 +26,7 @@ public class GameCenter: Service {
 		}
 	}
 	
-	public override func login(from sourceController: UIViewController, completion: @escaping LoginCompletion) {
+	public override func login(from sourceController: UIViewController?, completion: @escaping LoginCompletion) {
 		assert((Bundle.main.infoDictionary?["UIRequiredDeviceCapabilities"] as? [String])?.contains("gamekit") == true, "Please make sure you've enabled GameKit in your project's Capabilities page")
 
 		self.signinCompletion = completion
@@ -34,7 +34,7 @@ public class GameCenter: Service {
 		
 		GKLocalPlayer.localPlayer().authenticateHandler = { controller, error in
 			if let controller = controller {
-				sourceController.present(controller, animated: true)
+				sourceController!.present(controller, animated: true)
 			} else if let error = error {
 				print("************** Unable to Connect to Game Center\n\(error)\n***************************************")
 				self.signinCompletion?(nil, error)

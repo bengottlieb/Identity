@@ -29,7 +29,7 @@ public class Google: Service {
 		return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[.sourceApplication] as? String, annotation: options[.annotation])
 	}
 
-	public override func login(from: UIViewController, completion: @escaping LoginCompletion) {
+	public override func login(from: UIViewController?, completion: @escaping LoginCompletion) {
 		GIDSignIn.sharedInstance().uiDelegate = self
 		self.host = from
 		self.completion = completion

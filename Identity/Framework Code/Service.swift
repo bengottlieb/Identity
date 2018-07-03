@@ -13,7 +13,7 @@ public class Service: NSObject {
 	public typealias LoginCompletion = (UserInformation?, Error?) -> Void
 	public typealias FetchFriendsCompletion = ([FriendInformation]?, Error?) -> Void
 	
-	public func login(from: UIViewController, completion: @escaping LoginCompletion) {}
+	public func login(from: UIViewController?, completion: @escaping LoginCompletion) {}
 	public func fetchFriends(completion: @escaping FetchFriendsCompletion) {}
 }
 
@@ -71,7 +71,7 @@ extension Service {
 }
 
 extension Service {
-	public enum Provider: String, Codable { case twitter, facebook, gamecenter, cloudkit, google, device }
+	public enum Provider: String, Codable { case twitter, facebook, gamecenter, cloudkit, google, device, anonymous }
 	
 	static public private(set) var providers: [Provider] = []
 	public static func setup(with providers: [Provider]) {

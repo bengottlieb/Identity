@@ -61,6 +61,8 @@
 		B5E8119A20EAA4C300D39DD8 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8119920EAA4C300D39DD8 /* GameKit.framework */; };
 		B5E8119C20EAC82200D39DD8 /* CloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8119B20EAC82200D39DD8 /* CloudKit.swift */; };
 		B5E8119F20EAC86400D39DD8 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8119E20EAC86400D39DD8 /* CloudKit.framework */; };
+		B5E811A120EAE2F200D39DD8 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E811A020EAE2F200D39DD8 /* Device.swift */; };
+		B5E811A320EAE5B700D39DD8 /* Anonymous.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E811A220EAE5B700D39DD8 /* Anonymous.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +143,8 @@
 		B5E8119B20EAC82200D39DD8 /* CloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKit.swift; sourceTree = "<group>"; };
 		B5E8119D20EAC85700D39DD8 /* IdentityTesting.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IdentityTesting.entitlements; sourceTree = "<group>"; };
 		B5E8119E20EAC86400D39DD8 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		B5E811A020EAE2F200D39DD8 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		B5E811A220EAE5B700D39DD8 /* Anonymous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anonymous.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +237,8 @@
 				B5E8116E20E9A12400D39DD8 /* Google.swift */,
 				B5E8119720EA9FC800D39DD8 /* GameCenter.swift */,
 				B5E8119B20EAC82200D39DD8 /* CloudKit.swift */,
+				B5E811A020EAE2F200D39DD8 /* Device.swift */,
+				B5E811A220EAE5B700D39DD8 /* Anonymous.swift */,
 			);
 			name = "Framework Code";
 			path = "Identity/Framework Code";
@@ -449,8 +455,10 @@
 				B5E8116F20E9A12400D39DD8 /* Google.swift in Sources */,
 				B5CBEFD120E93586005F16B1 /* Twitter.swift in Sources */,
 				B52A561020E969EC00C64868 /* Service.swift in Sources */,
+				B5E811A320EAE5B700D39DD8 /* Anonymous.swift in Sources */,
 				B5E8119820EA9FC800D39DD8 /* GameCenter.swift in Sources */,
 				B5E8119C20EAC82200D39DD8 /* CloudKit.swift in Sources */,
+				B5E811A120EAE2F200D39DD8 /* Device.swift in Sources */,
 				B5CBEFB120E9301D005F16B1 /* Facebook.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
