@@ -31,7 +31,7 @@ public class Twitter: Service {
 	func fetchFriends(startingAt cursor: Int?, found: [FriendInformation] = [], completion: @escaping FetchFriendsCompletion) {
 		let client = TWTRAPIClient(userID: self.userID)
 		var error: NSError?
-		var params = ["count": "5"]
+		var params = ["count": "200"]
 		if let cursor = cursor { params["cursor"] = "\(cursor)" }
 		let request = client.urlRequest(withMethod: "GET", urlString: "https://api.twitter.com/1.1/friends/list.json", parameters: params, error: &error)
 		

@@ -33,9 +33,6 @@
 		B5CBEFC520E9311E005F16B1 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CBEFBF20E930E8005F16B1 /* FBSDKLoginKit.framework */; };
 		B5CBEFC620E9311E005F16B1 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CBEFC020E930E8005F16B1 /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B5CBEFC720E9311E005F16B1 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5CBEFC120E930E8005F16B1 /* Bolts.framework */; };
-		B5CBEFC820E9314C005F16B1 /* FBSDKLoginKit.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B5CBEFBF20E930E8005F16B1 /* FBSDKLoginKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B5CBEFC920E9314C005F16B1 /* FBSDKCoreKit.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B5CBEFC020E930E8005F16B1 /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B5CBEFCA20E9314C005F16B1 /* Bolts.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B5CBEFC120E930E8005F16B1 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5CBEFD120E93586005F16B1 /* Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CBEFD020E93586005F16B1 /* Twitter.swift */; };
 		B5E8116F20E9A12400D39DD8 /* Google.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E8116E20E9A12400D39DD8 /* Google.swift */; };
 		B5E8117220E9A23C00D39DD8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8117120E9A23C00D39DD8 /* SystemConfiguration.framework */; };
@@ -46,10 +43,6 @@
 		B5E8117B20E9A2DE00D39DD8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8117A20E9A2DE00D39DD8 /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B5E8117C20E9A2E900D39DD8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8117120E9A23C00D39DD8 /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B5E8117E20E9A2F200D39DD8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8117D20E9A2F200D39DD8 /* CoreMedia.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		B5E8118420E9B0E800D39DD8 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8115420E9986C00D39DD8 /* TwitterCore.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		B5E8118520E9B0E800D39DD8 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8115520E9986C00D39DD8 /* TwitterKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		B5E8118620E9B12600D39DD8 /* TwitterCore.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B5E8115420E9986C00D39DD8 /* TwitterCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B5E8118720E9B12600D39DD8 /* TwitterKit.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B5E8115520E9986C00D39DD8 /* TwitterKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5E8118820E9B14900D39DD8 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B5E8115620E9986C00D39DD8 /* TwitterKitResources.bundle */; };
 		B5E8118920E9B14900D39DD8 /* TwitterShareExtensionUIResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B5E8115720E9986C00D39DD8 /* TwitterShareExtensionUIResources.bundle */; };
 		B5E8118D20E9B17100D39DD8 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8118A20E9B17100D39DD8 /* GoogleSignIn.framework */; };
@@ -63,6 +56,8 @@
 		B5E8119F20EAC86400D39DD8 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8119E20EAC86400D39DD8 /* CloudKit.framework */; };
 		B5E811A120EAE2F200D39DD8 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E811A020EAE2F200D39DD8 /* Device.swift */; };
 		B5E811A320EAE5B700D39DD8 /* Anonymous.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E811A220EAE5B700D39DD8 /* Anonymous.swift */; };
+		B5E811C220EB143000D39DD8 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8115420E9986C00D39DD8 /* TwitterCore.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B5E811C320EB143000D39DD8 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8115520E9986C00D39DD8 /* TwitterKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,12 +89,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B5E8118620E9B12600D39DD8 /* TwitterCore.framework in Copy Files */,
-				B5E8118720E9B12600D39DD8 /* TwitterKit.framework in Copy Files */,
 				B599E04920E92489009EDBDC /* Identity.framework in Copy Files */,
-				B5CBEFC820E9314C005F16B1 /* FBSDKLoginKit.framework in Copy Files */,
-				B5CBEFC920E9314C005F16B1 /* FBSDKCoreKit.framework in Copy Files */,
-				B5CBEFCA20E9314C005F16B1 /* Bolts.framework in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,11 +143,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5E8117620E9A2B700D39DD8 /* CoreData.framework in Frameworks */,
+				B5E811C320EB143000D39DD8 /* TwitterKit.framework in Frameworks */,
 				B5E8117420E9A24300D39DD8 /* SafariServices.framework in Frameworks */,
-				B5E8118420E9B0E800D39DD8 /* TwitterCore.framework in Frameworks */,
-				B5E8118520E9B0E800D39DD8 /* TwitterKit.framework in Frameworks */,
 				B5E8117220E9A23C00D39DD8 /* SystemConfiguration.framework in Frameworks */,
 				B5CBEFC720E9311E005F16B1 /* Bolts.framework in Frameworks */,
+				B5E811C220EB143000D39DD8 /* TwitterCore.framework in Frameworks */,
 				B5CBEFC520E9311E005F16B1 /* FBSDKLoginKit.framework in Frameworks */,
 				B5E8118D20E9B17100D39DD8 /* GoogleSignIn.framework in Frameworks */,
 				B5E8118E20E9B17100D39DD8 /* GoogleSignInDependencies.framework in Frameworks */,
