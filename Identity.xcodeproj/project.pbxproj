@@ -46,8 +46,8 @@
 		B5E8117B20E9A2DE00D39DD8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8117A20E9A2DE00D39DD8 /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B5E8117C20E9A2E900D39DD8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8117120E9A23C00D39DD8 /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B5E8117E20E9A2F200D39DD8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8117D20E9A2F200D39DD8 /* CoreMedia.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		B5E8118420E9B0E800D39DD8 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8115420E9986C00D39DD8 /* TwitterCore.framework */; };
-		B5E8118520E9B0E800D39DD8 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8115520E9986C00D39DD8 /* TwitterKit.framework */; };
+		B5E8118420E9B0E800D39DD8 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8115420E9986C00D39DD8 /* TwitterCore.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B5E8118520E9B0E800D39DD8 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E8115520E9986C00D39DD8 /* TwitterKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B5E8118620E9B12600D39DD8 /* TwitterCore.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B5E8115420E9986C00D39DD8 /* TwitterCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5E8118720E9B12600D39DD8 /* TwitterKit.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = B5E8115520E9986C00D39DD8 /* TwitterKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5E8118820E9B14900D39DD8 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B5E8115620E9986C00D39DD8 /* TwitterKitResources.bundle */; };

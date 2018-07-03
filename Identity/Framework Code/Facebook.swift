@@ -29,7 +29,7 @@ public class Facebook: Service {
 	}
 	
 	public override func login(from: UIViewController?, completion: @escaping LoginCompletion) {
-		assert(Service.providers.contains(.google), "You're trying to access Facebook without setting it as a provider. Call 'Service.setup(with: [.facebook]).")
+		assert(Service.providers.contains(.facebook), "You're trying to access Facebook without setting it as a provider. Call 'Service.setup(with: [.facebook]).")
 		let perms = ["user_friends", "email", "public_profile"]
 		let loginManager = FBSDKLoginManager()
 		
