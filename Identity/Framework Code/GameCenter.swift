@@ -20,9 +20,16 @@ public class GameCenter: Service {
 	var localPlayerName: String?
 	
 	override public func fetchFriends(completion: @escaping Service.FetchFriendsCompletion) {
-		GKLocalPlayer.localPlayer().loadRecentPlayers() { players, error in
-			let friends = players?.compactMap { FriendInformation(gkPlayer: $0) }
-			completion(friends, error)
+		if #available(iOSApplicationExtension 10.0, *) {
+			GKLocalPlayer.localPlayer().loadRecentPlayers() { players, error in
+				let friends = players?.compactMap { FriendInformation(gkPlayer: $0) }
+				completion(friends, error)
+			}
+		} else {
+			GKLocalPlayer.localPlayer().loadFriendPlayers() { players, error in
+				let friends = players?.compactMap { FriendInformation(gkPlayer: $0) }
+				completion(friends, error)
+			}
 		}
 	}
 	
