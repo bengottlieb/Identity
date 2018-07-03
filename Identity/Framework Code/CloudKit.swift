@@ -15,7 +15,8 @@ public class CloudKit: Service {
 	public override func login(from sourceController: UIViewController?, completion: @escaping LoginCompletion) {
 		CKContainer.default().fetchUserRecordID { id, error in
 			if let id = id {
-				completion(UserInformation(provider: .cloudkit, userID: id.recordName, userName: nil), nil)
+				self.userInformation = UserInformation(provider: .cloudkit, userID: id.recordName, userName: nil)
+				completion(self.userInformation, nil)
 			} else {
 				completion(nil, error)
 			}

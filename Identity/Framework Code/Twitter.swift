@@ -61,7 +61,8 @@ public class Twitter: Service {
 			
 			self.userID = session?.userID
 			if let session = session {
-				completion(UserInformation(provider: .twitter, userID: session.userID, userName: session.userName), nil)
+				self.userInformation = UserInformation(provider: .twitter, userID: session.userID, userName: session.userName)
+				completion(self.userInformation, nil)
 			} else {
 				completion(nil, error)
 			}

@@ -16,9 +16,11 @@ public class Anonymous: Service {
 	public override func login(from sourceController: UIViewController?, completion: @escaping LoginCompletion) {
 		CloudKit.instance.login(from: sourceController) { ckInfo, error in
 			if let info = ckInfo {
+				self.userInformation = info
 				completion(info, nil)
 			} else {
 				Device.instance.login(from: sourceController) { deviceInfo, error in
+					self.userInformation = deviceInfo
 					completion(deviceInfo, nil)
 				}
 			}

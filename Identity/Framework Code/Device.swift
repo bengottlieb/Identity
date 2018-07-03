@@ -15,7 +15,8 @@ public class Device: Service {
 	
 	public override func login(from sourceController: UIViewController?, completion: @escaping LoginCompletion) {
 		if let id = UIDevice.current.identifierForVendor?.uuidString {
-			completion(UserInformation(provider: .device, userID: id, userName: nil, fullName: UIDevice.current.name), nil)
+			self.userInformation = UserInformation(provider: .device, userID: id, userName: nil, fullName: UIDevice.current.name)
+			completion(self.userInformation, nil)
 		} else {
 			completion(nil, Error.unableToFetchVendorID)
 		}

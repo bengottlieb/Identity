@@ -45,7 +45,9 @@ public class Facebook: Service {
 						if let friends = json["friends"] as? [String: Any] {
 							self.friends = friends["data"] as? [[String: Any]] ?? []
 						}
-						completion(UserInformation(provider: .facebook, userID: userID, userName: name, imageURL: imageURL), nil)
+						
+						self.userInformation = UserInformation(provider: .facebook, userID: userID, userName: name, imageURL: imageURL)
+						completion(self.userInformation, nil)
 					} else {
 						completion(nil, error)
 					}

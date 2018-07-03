@@ -42,7 +42,8 @@ public class GameCenter: Service {
 				self.localPlayerID = GKLocalPlayer.localPlayer().playerID
 				self.localPlayerName = GKLocalPlayer.localPlayer().alias
 				
-				self.signinCompletion?(UserInformation(provider: .gamecenter, userID: self.localPlayerID ?? "", userName: self.localPlayerName ?? ""), nil)
+				self.userInformation = UserInformation(provider: .gamecenter, userID: self.localPlayerID ?? "", userName: self.localPlayerName ?? "")
+				self.signinCompletion?(self.userInformation, nil)
 			}
 			self.signinCompletion = nil
 			self.signInController = nil

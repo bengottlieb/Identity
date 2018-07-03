@@ -48,7 +48,8 @@ extension Google: GIDSignInDelegate {
 			let email = user.profile.email
 			let givenName = user.profile.givenName
 
-			self.completion?(UserInformation(provider: .google, userID: idToken ?? userId ?? "", userName: email ?? givenName ?? ""), nil)
+			self.userInformation = UserInformation(provider: .google, userID: idToken ?? userId ?? "", userName: email ?? givenName ?? "")
+			self.completion?(self.userInformation, nil)
 		}
 		
 		self.completion = nil
