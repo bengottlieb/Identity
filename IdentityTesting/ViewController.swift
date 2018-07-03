@@ -23,27 +23,27 @@ class ViewController: UIViewController {
 
 
 	@IBAction func loginWithFacebook() {
-		Identity.Facebook.instance.login(from: self) { result, error in
+		Identity.Facebook.instance.signIn(from: self) { result, error in
 			if let info = result { print("info: \(info)") }
 			
 		}
 	}
 	
 	@IBAction func loginWithGoogle() {
-		Identity.Google.instance.login(from: self) { result, error in
+		Identity.Google.instance.signIn(from: self) { result, error in
 			if let info = result { print("info: \(info)") }
 			
 		}
 	}
 
 	@IBAction func loginWithCloudKit() {
-		Identity.CloudKit.instance.login(from: self) { result, error in
+		Identity.CloudKit.instance.signIn(from: self) { result, error in
 			
 		}
 	}
 
 	@IBAction func loginWithGameCenter() {
-		Identity.GameCenter.instance.login(from: self) { result, error in
+		Identity.GameCenter.instance.signIn(from: self) { result, error in
 			if let info = result { print("info: \(info)") }
 			Identity.GameCenter.instance.fetchFriends(completion: { friends, error in
 				print("Friends: \(friends!)")
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
 	}
 
 	@IBAction func loginWithTwitter() {
-		Identity.Twitter.instance.login(from: self) { result, error in
+		Identity.Twitter.instance.signIn(from: self) { result, error in
 			if let info = result { print("info: \(info)") }
 			Identity.Twitter.instance.fetchFriends(completion: { friends, error in
 				

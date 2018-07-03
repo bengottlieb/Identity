@@ -15,6 +15,10 @@ public class Facebook: Service {
 	
 	public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
 		FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+		
+		if FBSDKAccessToken.current() != nil {
+			self.requestUserInfo(completion: { _ in })
+		}
 	}
 	
 	public func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -23,40 +27,43 @@ public class Facebook: Service {
 	}
 	
 	var friends: [[String: Any]]?
-	
+	let perms = ["user_friends", "email", "public_profile"]
+
 	public override func fetchFriends(completion: @escaping FetchFriendsCompletion) {
 		completion(self.friends?.compactMap { FriendInformation(facebookInfo: $0) }, nil)
 	}
 	
-	public override func login(from: UIViewController?, completion: @escaping LoginCompletion) {
+	public override func signIn(from: UIViewController?, completion: @escaping LoginCompletion) {
 		assert(Service.providers.contains(.facebook), "You're trying to access Facebook without setting it as a provider. Call 'Service.setup(with: [.facebook]).")
-		let perms = ["user_friends", "email", "public_profile"]
 		let loginManager = FBSDKLoginManager()
 		
-		loginManager.logIn(withReadPermissions: perms, from: from) { result, error in
+		loginManager.logIn(withReadPermissions: self.perms, from: from) { result, error in
 			if result != nil {
-				let infoRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, friends"], httpMethod: "GET")
-				_ = infoRequest?.start() { connection, result, error in
-					if let json = result as? [String: Any] {
-						let name = json["name"] as? String ?? ""
-						let userID = json["id"] as? String ?? ""
-						let imageURL = "https://graph.facebook.com/\(userID)/pciture?type=large"
-						
-						if let friends = json["friends"] as? [String: Any] {
-							self.friends = friends["data"] as? [[String: Any]] ?? []
-						}
-						
-						self.userInformation = UserInformation(provider: .facebook, userID: userID, userName: name, imageURL: imageURL)
-						completion(self.userInformation, nil)
-					} else {
-						completion(nil, error)
-					}
-				}
+				self.requestUserInfo(completion: completion)
 			} else {
 				completion(nil, error)
 			}
 		}
-
+	}
+	
+	func requestUserInfo(completion: @escaping LoginCompletion) {
+		let infoRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, friends"], httpMethod: "GET")
+		_ = infoRequest?.start() { connection, result, error in
+			if let json = result as? [String: Any] {
+				let name = json["name"] as? String ?? ""
+				let userID = json["id"] as? String ?? ""
+				let imageURL = "https://graph.facebook.com/\(userID)/pciture?type=large"
+				
+				if let friends = json["friends"] as? [String: Any] {
+					self.friends = friends["data"] as? [[String: Any]] ?? []
+				}
+				
+				self.userInformation = UserInformation(provider: .facebook, userID: userID, userName: name, imageURL: imageURL)
+				completion(self.userInformation, nil)
+			} else {
+				completion(nil, error)
+			}
+		}
 	}
 
 }

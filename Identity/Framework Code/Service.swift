@@ -10,14 +10,14 @@ import Foundation
 import GameKit
 
 public class Service: NSObject {
-	var userInformation: UserInformation?
+	public var userInformation: UserInformation?
 	
 	public var isSignedIn: Bool { return self.userInformation != nil }
 	
 	public typealias LoginCompletion = (UserInformation?, Error?) -> Void
 	public typealias FetchFriendsCompletion = ([FriendInformation]?, Error?) -> Void
 	
-	public func login(from: UIViewController?, completion: @escaping LoginCompletion) {}
+	public func signIn(from: UIViewController?, completion: @escaping LoginCompletion) {}
 	public func fetchFriends(completion: @escaping FetchFriendsCompletion) {}
 }
 

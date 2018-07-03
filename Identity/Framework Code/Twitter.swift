@@ -51,7 +51,7 @@ public class Twitter: Service {
 	}
 
 	
-	override public func login(from: UIViewController?, completion: @escaping LoginCompletion) {
+	override public func signIn(from: UIViewController?, completion: @escaping LoginCompletion) {
 		assert(Service.providers.contains(.twitter), "You're trying to access Twitter without setting it as a provider. Call 'Service.setup(with: [.twitter]).")
 		self.setup(failable: false)
 		TWTRTwitter.sharedInstance().logIn(with: from) { session, error in

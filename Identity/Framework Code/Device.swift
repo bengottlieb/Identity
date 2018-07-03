@@ -13,7 +13,7 @@ public class Device: Service {
 	
 	enum Error: String, Swift.Error { case unableToFetchVendorID }
 	
-	public override func login(from sourceController: UIViewController?, completion: @escaping LoginCompletion) {
+	public override func signIn(from sourceController: UIViewController?, completion: @escaping LoginCompletion) {
 		if let id = UIDevice.current.identifierForVendor?.uuidString {
 			self.userInformation = UserInformation(provider: .device, userID: id, userName: nil, fullName: UIDevice.current.name)
 			completion(self.userInformation, nil)

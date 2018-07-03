@@ -13,13 +13,13 @@ public class Anonymous: Service {
 	
 	enum Error: String, Swift.Error { case unableToFetchVendorID }
 	
-	public override func login(from sourceController: UIViewController?, completion: @escaping LoginCompletion) {
-		CloudKit.instance.login(from: sourceController) { ckInfo, error in
+	public override func signIn(from sourceController: UIViewController?, completion: @escaping LoginCompletion) {
+		CloudKit.instance.signIn(from: sourceController) { ckInfo, error in
 			if let info = ckInfo {
 				self.userInformation = info
 				completion(info, nil)
 			} else {
-				Device.instance.login(from: sourceController) { deviceInfo, error in
+				Device.instance.signIn(from: sourceController) { deviceInfo, error in
 					self.userInformation = deviceInfo
 					completion(deviceInfo, nil)
 				}
