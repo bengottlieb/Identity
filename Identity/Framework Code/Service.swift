@@ -10,18 +10,34 @@ import Foundation
 import GameKit
 
 public class Service: NSObject {
-	public static var currentIdentityDefaultsKey = "identity-current"
+	static public var defaults = UserDefaults.standard
+	
+	var identityDefaultsKey: String { return "identity-\(self.provider.rawValue)" }
+	static let currentIdentityKey = "identity-current"
+	
+	public var isCurrent: Bool {
+		get { return Service.defaults.string(forKey: Service.currentIdentityKey) == self.identityDefaultsKey }
+		set {
+			if newValue {
+				Service.defaults.set(self.identityDefaultsKey, forKey: Service.currentIdentityKey)
+			} else {
+				Service.defaults.removeObject(forKey: Service.currentIdentityKey)
+			}
+		}
+	}
+	
 	public var userInformation: UserInformation? { didSet {
 		if let info = self.userInformation, let data = try? JSONEncoder().encode(info) {
-			UserDefaults.standard.set(data, forKey: Service.currentIdentityDefaultsKey)
+			Service.defaults.set(data, forKey: self.identityDefaultsKey)
 		} else {
-			UserDefaults.standard.removeObject(forKey: Service.currentIdentityDefaultsKey)
+			if self.isCurrent { isCurrent = false }
+			Service.defaults.removeObject(forKey: self.identityDefaultsKey)
 		}
 	}}
 	
 	override init() {
 		super.init()
-		if let data = UserDefaults.standard.data(forKey: Service.currentIdentityDefaultsKey) {
+		if let data = Service.defaults.data(forKey: self.identityDefaultsKey) {
 			if let userInfo = try? JSONDecoder().decode(UserInformation.self, from: data), userInfo.provider == self.provider { self.userInformation = userInfo }
 		}
 	}
