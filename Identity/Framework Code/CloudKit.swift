@@ -38,10 +38,10 @@ public class CloudKit: Service {
 				CKContainer.default().discoverUserIdentity(withUserRecordID: id) { info, error in
 					if let info = info {
 						self.userInformation = UserInformation(provider: .cloudkit, userID: id.recordName, userName: info.nameComponents?.givenName, email: info.lookupInfo?.emailAddress)
-						completion(self.userInformation, nil)
 					} else {
-						completion(nil, error)
+						self.userInformation = UserInformation(provider: .cloudkit, userID: id.recordName, userName: nil, email: nil)
 					}
+					completion(self.userInformation, error)
 				}
 			}
 		}
