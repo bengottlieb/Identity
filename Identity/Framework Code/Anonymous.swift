@@ -8,13 +8,14 @@
 
 import Foundation
 
+@available(iOSApplicationExtension 10.0, *)
 public class Anonymous: Service {
 	public static let instance = Anonymous()
 	
 	enum Error: String, Swift.Error { case unableToFetchVendorID }
 	
 	public override func signIn(from sourceController: UIViewController?, completion: @escaping LoginCompletion) {
-		CloudKit.instance.signIn(from: sourceController) { ckInfo, error in
+		CloudKit.instance.signInAnonymously(from: sourceController) { ckInfo, error in
 			if let info = ckInfo {
 				self.userInformation = info
 				completion(info, nil)

@@ -23,6 +23,8 @@ public class Google: Service {
 		GIDSignIn.sharedInstance().delegate = self
 	}
 	
+	override public var isAvailable: Bool { return Service.providers.contains(.google) && !self.clientID.isEmpty && Bundle.main.cfBundleURLs.filter({ $0.hasPrefix("com.googleusercontent.apps")}).count > 0 }
+	
 	public func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
 		assert(Service.providers.contains(.google), "You're trying to access Google without setting it as a provider. Call 'Service.setup(with: [.google]).")
 		assert(!self.clientID.isEmpty, "Make sure you set a Google Login client ID before attempting to use it.")

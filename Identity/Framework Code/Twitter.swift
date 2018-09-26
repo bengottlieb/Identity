@@ -28,6 +28,8 @@ public class Twitter: Service {
 		self.fetchFriends(startingAt: nil, completion: completion)
 	}
 	
+	override public var isAvailable: Bool { return Service.providers.contains(.twitter) && !self.consumerKey.isEmpty && !self.consumerSecret.isEmpty }
+	
 	func fetchFriends(startingAt cursor: Int?, found: [FriendInformation] = [], completion: @escaping FetchFriendsCompletion) {
 		let client = TWTRAPIClient(userID: self.userInformation?.userID)
 		var error: NSError?

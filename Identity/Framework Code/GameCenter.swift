@@ -34,6 +34,8 @@ public class GameCenter: Service {
 		}
 	}
 	
+	override public var isAvailable: Bool { return Service.providers.contains(.gamecenter) }
+
 	public override func signIn(from sourceController: UIViewController?, completion: @escaping LoginCompletion) {
 		assert((Bundle.main.infoDictionary?["UIRequiredDeviceCapabilities"] as? [String])?.contains("gamekit") == true, "Please make sure you've enabled GameKit in your project's Capabilities page")
 

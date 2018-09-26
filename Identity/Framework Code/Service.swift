@@ -42,6 +42,7 @@ public class Service: NSObject {
 		}
 	}
 	
+	public var isAvailable: Bool { return true }
 	public var isSignedIn: Bool { return self.userInformation != nil }
 	var provider: Provider { return .none }
 	

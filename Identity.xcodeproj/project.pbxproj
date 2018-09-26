@@ -202,8 +202,8 @@
 				B5CBEFB020E9301D005F16B1 /* Facebook.swift */,
 				B5CBEFD020E93586005F16B1 /* Twitter.swift */,
 				B5E8116E20E9A12400D39DD8 /* Google.swift */,
-				B5E8119720EA9FC800D39DD8 /* GameCenter.swift */,
 				B5E8119B20EAC82200D39DD8 /* CloudKit.swift */,
+				B5E8119720EA9FC800D39DD8 /* GameCenter.swift */,
 				B5E811A020EAE2F200D39DD8 /* Device.swift */,
 				B5E811A220EAE5B700D39DD8 /* Anonymous.swift */,
 			);
