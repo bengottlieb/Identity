@@ -202,9 +202,13 @@ extension Service {
 
 extension Bundle {
 	var cfBundleURLs: [String] {
-		guard let types = Bundle.main.infoDictionary?["CFBundleURLTypes"] as? [[String: Any]] else { return [] }
+		var schemes = Bundle.main.infoDictionary?["CFBundleURLSchemes"] as? [String] ?? []
+
+		if let types = Bundle.main.infoDictionary?["CFBundleURLTypes"] as? [[String: Any]] {
+			schemes += types.reduce([]) { return $0 + ($1["CFBundleURLSchemes"] as? [String] ?? []) }
+		}
 		
-		return types.reduce([]) { return $0 + ($1["CFBundleURLSchemes"] as? [String] ?? []) }
+		return schemes
 	}
 }
 

@@ -14,7 +14,8 @@ public class Facebook: Service {
 	public static let instance = Facebook()
 	var completions: [LoginCompletion] = []
 	override var provider: Provider { return .facebook }
-
+	public var applicationID: String? { didSet { if let appID = self.applicationID { FBSDKSettings.setAppID(appID) }}}
+	
 	public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
 		FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 		
