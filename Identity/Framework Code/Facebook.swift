@@ -15,15 +15,15 @@ public class Facebook: Service {
 	var completions: [LoginCompletion] = []
 	override var provider: Provider { return .facebook }
 
-	public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
+	public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
 		FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 		
 		if FBSDKAccessToken.current() != nil {
-			self.requestUserInfo(completion: { _ in })
+			self.requestUserInfo(completion: { _,_  in })
 		}
 	}
 	
-	public func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+	public func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
 		assert(Bundle.main.cfBundleURLs.filter({ $0.hasPrefix("fb")}).count > 0, "No Facebook CFBundleURL found in the main info.plist")
 		return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
 	}

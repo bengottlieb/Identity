@@ -104,27 +104,94 @@ extension Service {
 
 		init?(gkPlayer: GKPlayer) {
 			self.name = gkPlayer.displayName
-			self.userID = gkPlayer.playerID ?? ""
+			self.userID = gkPlayer.playerID
 			if self.userID.isEmpty { return nil }
 		}
 	}
 }
 
 extension Service {
-	public enum Provider: String, Codable { case none, twitter, facebook, gamecenter, cloudkit, google, device, anonymous }
+	public enum Provider: String, Codable { case none, email, twitter, facebook, gamecenter, cloudkit, google, device, anonymous
+		
+		public var title: String? {
+			switch self {
+			case .none: return NSLocalizedString("none", comment: "none")
+			case .email: return NSLocalizedString("Email", comment: "email")
+			case .twitter: return NSLocalizedString("Twitter", comment: "Twitter")
+			case .facebook: return NSLocalizedString("Facebook", comment: "Facebook")
+			case .gamecenter: return NSLocalizedString("Game Center", comment: "Game Center")
+			case .cloudkit: return NSLocalizedString("iCloud", comment: "iCloud")
+			case .google: return NSLocalizedString("Google", comment: "Google")
+			case .device, .anonymous: return nil
+			}
+		}
+		
+		public var mainColor: UIColor {
+			switch self {
+			case .none: return .white
+			case .email: return .darkGray
+			case .twitter: return UIColor(red:0.25, green:0.76, blue:0.93, alpha:1.0)
+			case .facebook: return UIColor(red:0.26, green:0.42, blue:0.69, alpha:1.0)
+			case .gamecenter: return UIColor(red:0.38, green:0.66, blue:0.37, alpha:1.0)
+			case .cloudkit: return UIColor(red:0.06, green:0.22, blue:0.38, alpha:1.0)
+			case .google: return UIColor(red:0.98, green:0.73, blue:0.18, alpha:1.0)
+			case .device: return .white
+			case .anonymous: return .black
+			}
+		}
+
+		public var textColor: UIColor {
+			switch self {
+			case .none: return .black
+			case .email: return .white
+			case .twitter: return .black
+			case .facebook: return .white
+			case .gamecenter: return .white
+			case .cloudkit: return .white
+			case .google: return .black
+			case .device: return .black
+			case .anonymous: return .white
+			}
+		}
+	}
+	
+	public static func service(for provider: Provider) -> Service? {
+		switch provider {
+		case .none: return nil
+		case .email: return nil
+		case .twitter: return Twitter.instance
+		case .facebook: return Facebook.instance
+		case .gamecenter: return GameCenter.instance
+		case .cloudkit:
+			if #available(iOSApplicationExtension 10.0, *) {
+				return CloudKit.instance
+			} else {
+				return nil
+			}
+			
+		case .google: return Google.instance
+		case .device: return Device.instance
+		case .anonymous:
+			if #available(iOSApplicationExtension 10.0, *) {
+				return Anonymous.instance
+			} else {
+				return nil
+			}
+		}
+	}
 	
 	static public private(set) var providers: [Provider] = []
 	public static func setup(with providers: [Provider]) {
 		self.providers = providers
 	}
 	
-	public static func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
+	public static func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
 		assert(!self.providers.isEmpty, "Please add one or more Service Providers before using Identity.")
 		if self.providers.contains(.facebook) { Facebook.instance.application(application, didFinishLaunchingWithOptions: launchOptions) }
 		if self.providers.contains(.google) { Google.instance.application(application, didFinishLaunchingWithOptions: launchOptions) }
 	}
 	
-	public static func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+	public static func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
 		if self.providers.contains(.facebook), Facebook.instance.application(app, open: url, options: options) { return true }
 		if self.providers.contains(.twitter), Twitter.instance.application(app, open: url, options: options) { return true }
 		if self.providers.contains(.google), Google.instance.application(app, open: url, options: options) { return true }

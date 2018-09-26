@@ -18,14 +18,14 @@ public class Google: Service {
 	var completion: LoginCompletion?
 	override var provider: Provider { return .google }
 
-	public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
+	public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
 		GIDSignIn.sharedInstance().clientID = self.clientID
 		GIDSignIn.sharedInstance().delegate = self
 	}
 	
 	override public var isAvailable: Bool { return Service.providers.contains(.google) && !self.clientID.isEmpty && Bundle.main.cfBundleURLs.filter({ $0.hasPrefix("com.googleusercontent.apps")}).count > 0 }
 	
-	public func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+	public func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
 		assert(Service.providers.contains(.google), "You're trying to access Google without setting it as a provider. Call 'Service.setup(with: [.google]).")
 		assert(!self.clientID.isEmpty, "Make sure you set a Google Login client ID before attempting to use it.")
 		assert(Bundle.main.cfBundleURLs.filter({ $0.hasPrefix("com.googleusercontent.apps")}).count > 0, "No Google CFBundleURL found in the main info.plist")

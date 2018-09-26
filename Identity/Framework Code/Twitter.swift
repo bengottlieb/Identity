@@ -17,7 +17,7 @@ public class Twitter: Service {
 
 	var isSetup = false
 
-	public func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+	public func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
 		if !self.setup(failable: true) { return false }
 		return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
 	}

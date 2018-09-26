@@ -22,12 +22,12 @@ public class GameCenter: Service {
 
 	override public func fetchFriends(completion: @escaping Service.FetchFriendsCompletion) {
 		if #available(iOSApplicationExtension 10.0, *) {
-			GKLocalPlayer.localPlayer().loadRecentPlayers() { players, error in
+			GKLocalPlayer.local.loadRecentPlayers() { players, error in
 				let friends = players?.compactMap { FriendInformation(gkPlayer: $0) }
 				completion(friends, error)
 			}
 		} else {
-			GKLocalPlayer.localPlayer().loadFriendPlayers() { players, error in
+			GKLocalPlayer.local.loadFriendPlayers() { players, error in
 				let friends = players?.compactMap { FriendInformation(gkPlayer: $0) }
 				completion(friends, error)
 			}
@@ -42,15 +42,15 @@ public class GameCenter: Service {
 		self.signinCompletion = completion
 		self.signInController = sourceController
 		
-		GKLocalPlayer.localPlayer().authenticateHandler = { controller, error in
+		GKLocalPlayer.local.authenticateHandler = { controller, error in
 			if let controller = controller {
 				sourceController!.present(controller, animated: true)
 			} else if let error = error {
 				print("************** Unable to Connect to Game Center\n\(error)\n***************************************")
 				self.signinCompletion?(nil, error)
 			} else {
-				self.localPlayerID = GKLocalPlayer.localPlayer().playerID
-				self.localPlayerName = GKLocalPlayer.localPlayer().alias
+				self.localPlayerID = GKLocalPlayer.local.playerID
+				self.localPlayerName = GKLocalPlayer.local.alias
 				
 				self.userInformation = UserInformation(provider: .gamecenter, userID: self.localPlayerID ?? "", userName: self.localPlayerName ?? "")
 				self.signinCompletion?(self.userInformation, nil)
