@@ -14,6 +14,16 @@ import CloudKit
 public class CloudKit: Service {
 	public static let instance = CloudKit()
 	override var provider: Provider { return .cloudkit }
+	
+	var currentStatus = CKAccountStatus.couldNotDetermine
+	
+	override init() {
+		super.init()
+		
+		CKContainer.default().accountStatus { status, error in
+			self.currentStatus = status
+		}
+	}
 
 	public func signInAnonymously(from sourceController: UIViewController?, completion: @escaping LoginCompletion) {
 		CKContainer.default().fetchUserRecordID { id, error in
@@ -26,7 +36,7 @@ public class CloudKit: Service {
 		}
 	}
 
-	override public var isAvailable: Bool { return Service.providers.contains(.cloudkit) }
+	override public var isAvailable: Bool { return Service.providers.contains(.cloudkit) && self.currentStatus == .available }
 
 	public override func signIn(from sourceController: UIViewController?, completion: @escaping LoginCompletion) {
 		CKContainer.default().requestApplicationPermission(.userDiscoverability) { status, error in

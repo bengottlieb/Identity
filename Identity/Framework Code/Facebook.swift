@@ -36,7 +36,7 @@ public class Facebook: Service {
 		completion(self.friends?.compactMap { FriendInformation(facebookInfo: $0) }, nil)
 	}
 	
-	override public var isAvailable: Bool { return Service.providers.contains(.facebook) && Bundle.main.cfBundleURLs.filter({ $0.hasPrefix("fb")}).count > 0 }
+	override public var isAvailable: Bool { return Service.providers.contains(.facebook) && Bundle.main.cfBundleURLs.filter({ $0.hasPrefix("fb")}).count > 0 && self.applicationID != nil }
 
 	public override func signIn(from: UIViewController?, completion: @escaping LoginCompletion) {
 		assert(Service.providers.contains(.facebook), "You're trying to access Facebook without setting it as a provider. Call 'Service.setup(with: [.facebook]).")
