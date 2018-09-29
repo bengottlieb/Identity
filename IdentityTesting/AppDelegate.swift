@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
 		
-		Identity.Service.setup(with: [.gamecenter])
+		Identity.Service.setup(with: [.gamecenter, .cloudkit])
 
 		Identity.Google.instance.clientID = ""
 		Identity.Twitter.instance.consumerKey = ""

@@ -55,6 +55,8 @@ public class Service: NSObject {
 	public func signOut() {
 		self.userInformation = nil
 	}
+	
+	func setup() { }
 }
 
 extension Service {
@@ -155,7 +157,8 @@ extension Service {
 		}
 	}
 	
-	public static func service(for provider: Provider) -> Service? {
+	public static func service(for provider: Provider?) -> Service? {
+		guard let provider = provider else { return nil }
 		switch provider {
 		case .none: return nil
 		case .email: return nil
@@ -183,6 +186,9 @@ extension Service {
 	static public private(set) var providers: [Provider] = []
 	public static func setup(with providers: [Provider]) {
 		self.providers = providers
+		for provider in providers {
+			self.service(for: provider)?.setup()
+		}
 	}
 	
 	public static func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {

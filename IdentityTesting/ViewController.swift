@@ -9,12 +9,39 @@
 import UIKit
 import Identity
 
-class ViewController: UIViewController {
+extension UIButton {
+	func setEnabled(_ enabled: Bool) {
+		self.alpha = enabled ? 1.0 : 0.1
+	}
+}
 
+class ViewController: UIViewController {
+	@IBOutlet var cloudKitButton: UIButton!
+	@IBOutlet var gameCenterButton: UIButton!
+	@IBOutlet var googleButton: UIButton!
+	@IBOutlet var twitterButton: UIButton!
+	@IBOutlet var facebookButton: UIButton!
+
+	var allButtons: [UIButton] { return [self.cloudKitButton, self.googleButton, self.gameCenterButton, self.twitterButton, self.facebookButton ]}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+		
+		self.updateAvailability()
+		DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+			self.updateAvailability()
+		}
 	}
+	
+	func updateAvailability() {
+		self.cloudKitButton.setEnabled(CloudKit.instance.isAvailable)
+		self.gameCenterButton.setEnabled(GameCenter.instance.isAvailable)
+		self.googleButton.setEnabled(Google.instance.isAvailable)
+		self.twitterButton.setEnabled(Twitter.instance.isAvailable)
+		self.facebookButton.setEnabled(Facebook.instance.isAvailable)
+	}
+	
+	
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
