@@ -22,6 +22,9 @@ public class CloudKit: Service {
 		
 		CKContainer.default().accountStatus { status, error in
 			self.currentStatus = status
+			if self.isAvailable {
+				DispatchQueue.main.async { NotificationCenter.default.post(name: Notifications.availabilityChanged, object: self) }
+			}
 		}
 	}
 

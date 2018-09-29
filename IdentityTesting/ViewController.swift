@@ -28,12 +28,10 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		
 		self.updateAvailability()
-		DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-			self.updateAvailability()
-		}
+		NotificationCenter.default.addObserver(self, selector: #selector(updateAvailability), name: Service.Notifications.availabilityChanged, object: nil)
 	}
 	
-	func updateAvailability() {
+	@objc func updateAvailability() {
 		self.cloudKitButton.setEnabled(CloudKit.instance.isAvailable)
 		self.gameCenterButton.setEnabled(GameCenter.instance.isAvailable)
 		self.googleButton.setEnabled(Google.instance.isAvailable)

@@ -15,6 +15,10 @@ public class Service: NSObject {
 	var identityDefaultsKey: String { return "identity-\(self.provider.rawValue)" }
 	static let currentIdentityKey = "identity-current"
 	
+	public struct Notifications {
+		static public let availabilityChanged = Notification.Name("Identity-availabilityChanged")
+	}
+	
 	public var isCurrent: Bool {
 		get { return Service.defaults.string(forKey: Service.currentIdentityKey) == self.identityDefaultsKey }
 		set {
