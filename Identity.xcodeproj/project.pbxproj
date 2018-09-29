@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		B51A8BE021600E1500C1D3E6 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51A8BDE21600DDA00C1D3E6 /* Email.swift */; };
 		B52A561020E969EC00C64868 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A560F20E969EC00C64868 /* Service.swift */; };
 		B599E02B20E91451009EDBDC /* Identity.h in Headers */ = {isa = PBXBuildFile; fileRef = B599E02920E91451009EDBDC /* Identity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B599E03720E920CF009EDBDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599E03620E920CF009EDBDC /* AppDelegate.swift */; };
@@ -81,6 +82,7 @@
 
 /* Begin PBXFileReference section */
 		B504E6461A8968DC001B414B /* Identity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Identity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B51A8BDE21600DDA00C1D3E6 /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 		B52A560F20E969EC00C64868 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		B599E02920E91451009EDBDC /* Identity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Identity.h; sourceTree = "<group>"; };
 		B599E02A20E91451009EDBDC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				B5CBEFB020E9301D005F16B1 /* Facebook.swift */,
 				B5CBEFD020E93586005F16B1 /* Twitter.swift */,
 				B5E8116E20E9A12400D39DD8 /* Google.swift */,
+				B51A8BDE21600DDA00C1D3E6 /* Email.swift */,
 				B5E8119B20EAC82200D39DD8 /* CloudKit.swift */,
 				B5E8119720EA9FC800D39DD8 /* GameCenter.swift */,
 				B5E811A020EAE2F200D39DD8 /* Device.swift */,
@@ -421,6 +424,7 @@
 				B52A561020E969EC00C64868 /* Service.swift in Sources */,
 				B5E811A320EAE5B700D39DD8 /* Anonymous.swift in Sources */,
 				B5E8119820EA9FC800D39DD8 /* GameCenter.swift in Sources */,
+				B51A8BE021600E1500C1D3E6 /* Email.swift in Sources */,
 				B5E8119C20EAC82200D39DD8 /* CloudKit.swift in Sources */,
 				B5E811A120EAE2F200D39DD8 /* Device.swift in Sources */,
 				B5CBEFB120E9301D005F16B1 /* Facebook.swift in Sources */,

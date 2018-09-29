@@ -165,7 +165,7 @@ extension Service {
 		guard let provider = provider else { return nil }
 		switch provider {
 		case .none: return nil
-		case .email: return nil
+		case .email: return Email.instance
 		case .twitter: return Twitter.instance
 		case .facebook: return Facebook.instance
 		case .gamecenter: return GameCenter.instance
