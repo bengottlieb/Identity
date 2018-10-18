@@ -1,10 +1,10 @@
-#Identity#
+# Identity #
 
 Identity is a framework that allows you to easily switch between various forms of user identification service: Twitter, Facebook, Google, GameCenter, iCloud, or plain old Email. Its aim is to provide a simple, unified interface to each of these services. 
 
-##Usage##
+## Usage ##
 
-###Initial Setup###
+### Initial Setup ###
 
 Before using any of Identity's features, you'll need to tell it the services you're interested in, and any keys, client IDs, or secrets required for them. The best place to do this is in your AppDelegate's application(_:didFinishLaunchingWithOptions:) call.
 
@@ -30,7 +30,7 @@ You'll also need to add code to your AppDelegate's application(_:open:options) m
 
 ```
 
-###Services Supported###
+### Services Supported ###
 Identity supports five different remote 'services' that can be used to generate a user ID. Each of these is accessed via a singleton. They are:
 
 ```
@@ -44,7 +44,7 @@ Identity supports five different remote 'services' that can be used to generate 
 In addition, you can use Email as a mechanism (you'll need to provide the UI to grab the user's email address) or the device's unique vendor identifier.
 
 
-###User Interactions###
+### User Interactions ###
 
 When you want your user to choose a sign-in method, you're in charge of creating the selection UI. A frequent mechanism is a series of buttons, one for each service you're interested in.
 
