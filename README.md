@@ -53,9 +53,9 @@ Note that not all services may be available. For example, if you've chose to use
 To sign in with a particular service, simple call the service singleton's signin(from:completion:) method, passing a view controller and a callback:
 
 ```
-		Identity.Facebook.instance.signIn(from: self) { result, error in
-			if let info = result { print("info: \(info)") }
-		}
+	Identity.Facebook.instance.signIn(from: self) { result, error in
+		if let info = result { print("info: \(info)") }
+	}
 ```
 
 Your callback should take two parameters. The first is an optional UserInformation structure, containing a successful login's results. This will include at least a userID string (unique to that user), and may also have other information, depending on the service, such as name, email, or an avatar image URL.
