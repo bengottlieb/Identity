@@ -66,13 +66,13 @@ public class Service: NSObject {
 extension Service {
 	public struct UserInformation: CustomStringConvertible, Codable {
 		public let provider: Provider
-		public let userID: String
-		public let userName: String?
-		public let fullName: String?
-		public let email: String?
-		public let imageURL: URL?
+		public var userID: String
+		public var userName: String?
+		public var fullName: String?
+		public var email: String?
+		public var imageURL: URL?
 		
-		init(provider: Provider, userID: String, userName: String?, email: String? = nil, fullName: String? = nil, imageURL: String? = nil) {
+		public init(provider: Provider, userID: String = "", userName: String? = nil, email: String? = nil, fullName: String? = nil, imageURL: String? = nil) {
 			self.provider = provider
 			self.userID = userID
 			self.userName = userName
