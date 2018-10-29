@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import Bolts
 
 public class Facebook: Service {
 	public static let instance = Facebook()

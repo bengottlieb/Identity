@@ -23,6 +23,9 @@
 /* Begin PBXBuildFile section */
 		B51A8BE021600E1500C1D3E6 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51A8BDE21600DDA00C1D3E6 /* Email.swift */; };
 		B52A561020E969EC00C64868 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A560F20E969EC00C64868 /* Service.swift */; };
+		B55AD05F21871DC50092B4C4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55AD05C21871DC50092B4C4 /* FBSDKLoginKit.framework */; };
+		B55AD06021871DC50092B4C4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55AD05D21871DC50092B4C4 /* Bolts.framework */; };
+		B55AD06121871DC50092B4C4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55AD05E21871DC50092B4C4 /* FBSDKCoreKit.framework */; };
 		B599E02B20E91451009EDBDC /* Identity.h in Headers */ = {isa = PBXBuildFile; fileRef = B599E02920E91451009EDBDC /* Identity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B599E03720E920CF009EDBDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599E03620E920CF009EDBDC /* AppDelegate.swift */; };
 		B599E03920E920CF009EDBDC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599E03820E920CF009EDBDC /* ViewController.swift */; };
@@ -67,6 +70,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		B55AD058218714B00092B4C4 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B599E04820E9247B009EDBDC /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -84,6 +97,9 @@
 		B504E6461A8968DC001B414B /* Identity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Identity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B51A8BDE21600DDA00C1D3E6 /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 		B52A560F20E969EC00C64868 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		B55AD05C21871DC50092B4C4 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		B55AD05D21871DC50092B4C4 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		B55AD05E21871DC50092B4C4 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		B599E02920E91451009EDBDC /* Identity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Identity.h; sourceTree = "<group>"; };
 		B599E02A20E91451009EDBDC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B599E02F20E91486009EDBDC /* BuildFramework.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = BuildFramework.sh; path = Identity/BuildFramework.sh; sourceTree = "<group>"; };
@@ -129,7 +145,10 @@
 				B5E8117420E9A24300D39DD8 /* SafariServices.framework in Frameworks */,
 				B5E8117220E9A23C00D39DD8 /* SystemConfiguration.framework in Frameworks */,
 				B5E811C220EB143000D39DD8 /* TwitterCore.framework in Frameworks */,
+				B55AD06121871DC50092B4C4 /* FBSDKCoreKit.framework in Frameworks */,
 				B5E8118D20E9B17100D39DD8 /* GoogleSignIn.framework in Frameworks */,
+				B55AD06021871DC50092B4C4 /* Bolts.framework in Frameworks */,
+				B55AD05F21871DC50092B4C4 /* FBSDKLoginKit.framework in Frameworks */,
 				B5E8118E20E9B17100D39DD8 /* GoogleSignInDependencies.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,6 +246,9 @@
 		B5CBEFBE20E930E8005F16B1 /* Facebook */ = {
 			isa = PBXGroup;
 			children = (
+				B55AD05D21871DC50092B4C4 /* Bolts.framework */,
+				B55AD05E21871DC50092B4C4 /* FBSDKCoreKit.framework */,
+				B55AD05C21871DC50092B4C4 /* FBSDKLoginKit.framework */,
 			);
 			path = Facebook;
 			sourceTree = "<group>";
@@ -289,6 +311,7 @@
 				B504E6421A8968DC001B414B /* Frameworks */,
 				B504E6431A8968DC001B414B /* Headers */,
 				B504E6441A8968DC001B414B /* Resources */,
+				B55AD058218714B00092B4C4 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -601,7 +624,10 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.standalone.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Identity;
 				SKIP_INSTALL = YES;
@@ -636,7 +662,10 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.standalone.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Identity;
 				SKIP_INSTALL = YES;
