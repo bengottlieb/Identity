@@ -44,22 +44,28 @@ public class Facebook: Service {
 		let loginManager = FBSDKLoginManager()
 		
 		if self.completions.count > 0 {
-			self.completions.append({ id, error in
-				if id == nil {
-					self.signIn(from: from, completion: completion)
-				} else {
-					completion(id, error)
-				}
-			})
+			self.completions.append(completion)
 			return
 		}
-
+		
+		self.completions = [completion]
+		
+//		if self.completions.count > 0 {
+//			self.completions.append({ id, error in
+//				if id == nil {
+//					self.signIn(from: from, completion: completion)
+//				} else {
+//					completion(id, error)
+//				}
+//			})
+//			return
+//		}
 		
 		loginManager.logIn(withReadPermissions: self.perms, from: from) { result, error in
 			if result != nil {
-				self.requestUserInfo(completion: completion)
+				self.internalRequestUserInfo()
 			} else {
-				completion(nil, error)
+				self.callCompletions(with: error)
 			}
 		}
 	}
@@ -69,8 +75,12 @@ public class Facebook: Service {
 			self.completions.append(completion)
 			return
 		}
-		
 		self.completions = [completion]
+
+		self.internalRequestUserInfo()
+	}
+	
+	func internalRequestUserInfo() {
 		let infoRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, friends"], httpMethod: "GET")
 		_ = infoRequest?.start() { connection, result, error in
 			if let json = result as? [String: Any] {
@@ -84,7 +94,6 @@ public class Facebook: Service {
 				
 				self.userInformation = UserInformation(provider: .facebook, userID: userID, userName: name, imageURL: imageURL)
 				self.callCompletions(with: nil)
-				completion(self.userInformation, nil)
 			} else {
 				self.callCompletions(with: error)
 			}
