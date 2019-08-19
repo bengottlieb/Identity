@@ -110,6 +110,7 @@
 		B599E03D20E920D0009EDBDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B599E04020E920D0009EDBDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B599E04220E920D0009EDBDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5B09C02230B20190071F7F3 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		B5CBEFB020E9301D005F16B1 /* Facebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
 		B5CBEFD020E93586005F16B1 /* Twitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twitter.swift; sourceTree = "<group>"; };
 		B5E8115420E9986C00D39DD8 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
@@ -173,6 +174,8 @@
 		B504E60A1A89230F001B414B = {
 			isa = PBXGroup;
 			children = (
+				B5B09C02230B20190071F7F3 /* Package.swift */,
+				B5B09C00230B1FDF0071F7F3 /* Source */,
 				B599E02F20E91486009EDBDC /* BuildFramework.sh */,
 				B5CBEFBD20E930E8005F16B1 /* ExternalFrameworks */,
 				B5CBEFAD20E92E41005F16B1 /* Framework Code */,
@@ -216,7 +219,15 @@
 			path = IdentityTesting;
 			sourceTree = "<group>";
 		};
-		B5CBEFAD20E92E41005F16B1 /* Framework Code */ = {
+		B5B09C00230B1FDF0071F7F3 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				B5B09C01230B1FE90071F7F3 /* Identity */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		B5B09C01230B1FE90071F7F3 /* Identity */ = {
 			isa = PBXGroup;
 			children = (
 				B52A560F20E969EC00C64868 /* Service.swift */,
@@ -228,6 +239,13 @@
 				B5E8119720EA9FC800D39DD8 /* GameCenter.swift */,
 				B5E811A020EAE2F200D39DD8 /* Device.swift */,
 				B5E811A220EAE5B700D39DD8 /* Anonymous.swift */,
+			);
+			path = Identity;
+			sourceTree = "<group>";
+		};
+		B5CBEFAD20E92E41005F16B1 /* Framework Code */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			name = "Framework Code";
 			path = "Identity/Framework Code";
@@ -383,6 +401,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
