@@ -9,7 +9,6 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
-import Bolts
 
 public class Facebook: Service {
 	public static let instance = Facebook()
@@ -18,16 +17,16 @@ public class Facebook: Service {
 	public var applicationID: String? { return Bundle.main.infoDictionary?["FacebookAppID"] as? String }
 	
 	public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-		FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+		ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 		
-		if FBSDKAccessToken.current() != nil {
+		if AccessToken.current != nil {
 			self.requestUserInfo(completion: { _,_  in })
 		}
 	}
 	
 	public func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
 		assert(Bundle.main.cfBundleURLs.filter({ $0.hasPrefix("fb")}).count > 0, "No Facebook CFBundleURL found in the main info.plist")
-		return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+		return ApplicationDelegate.shared.application(app, open: url, options: options)
 	}
 	
 	var friends: [[String: Any]]?
@@ -41,7 +40,7 @@ public class Facebook: Service {
 
 	public override func signIn(from: UIViewController?, completion: @escaping LoginCompletion) {
 		assert(Service.providers.contains(.facebook), "You're trying to access Facebook without setting it as a provider. Call 'Service.setup(with: [.facebook]).")
-		let loginManager = FBSDKLoginManager()
+		let loginManager = LoginManager()
 		
 		if self.completions.count > 0 {
 			self.completions.append(completion)
@@ -61,7 +60,7 @@ public class Facebook: Service {
 //			return
 //		}
 		
-		loginManager.logIn(withReadPermissions: self.perms, from: from) { result, error in
+		loginManager.logIn(permissions: self.perms, from: from) { result, error in
 			if result != nil {
 				self.internalRequestUserInfo()
 			} else {
@@ -81,8 +80,8 @@ public class Facebook: Service {
 	}
 	
 	func internalRequestUserInfo() {
-		let infoRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, friends"], httpMethod: "GET")
-		_ = infoRequest?.start() { connection, result, error in
+		let infoRequest = GraphRequest(graphPath: "me", parameters: ["fields": "id, name, friends"], httpMethod: .get)
+		_ = infoRequest.start() { connection, result, error in
 			if let json = result as? [String: Any] {
 				let name = json["name"] as? String ?? ""
 				let userID = json["id"] as? String ?? ""

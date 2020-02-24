@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -23,9 +23,8 @@
 /* Begin PBXBuildFile section */
 		B51A8BE021600E1500C1D3E6 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51A8BDE21600DDA00C1D3E6 /* Email.swift */; };
 		B52A561020E969EC00C64868 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52A560F20E969EC00C64868 /* Service.swift */; };
-		B55AD05F21871DC50092B4C4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55AD05C21871DC50092B4C4 /* FBSDKLoginKit.framework */; };
-		B55AD06021871DC50092B4C4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55AD05D21871DC50092B4C4 /* Bolts.framework */; };
-		B55AD06121871DC50092B4C4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55AD05E21871DC50092B4C4 /* FBSDKCoreKit.framework */; };
+		B55AD05F21871DC50092B4C4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55AD05C21871DC50092B4C4 /* FBSDKLoginKit.framework */; platformFilter = ios; };
+		B55AD06121871DC50092B4C4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55AD05E21871DC50092B4C4 /* FBSDKCoreKit.framework */; platformFilter = ios; };
 		B599E02B20E91451009EDBDC /* Identity.h in Headers */ = {isa = PBXBuildFile; fileRef = B599E02920E91451009EDBDC /* Identity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B599E03720E920CF009EDBDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599E03620E920CF009EDBDC /* AppDelegate.swift */; };
 		B599E03920E920CF009EDBDC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599E03820E920CF009EDBDC /* ViewController.swift */; };
@@ -98,7 +97,6 @@
 		B51A8BDE21600DDA00C1D3E6 /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 		B52A560F20E969EC00C64868 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		B55AD05C21871DC50092B4C4 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		B55AD05D21871DC50092B4C4 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		B55AD05E21871DC50092B4C4 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		B599E02920E91451009EDBDC /* Identity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Identity.h; sourceTree = "<group>"; };
 		B599E02A20E91451009EDBDC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 				B5E811C220EB143000D39DD8 /* TwitterCore.framework in Frameworks */,
 				B55AD06121871DC50092B4C4 /* FBSDKCoreKit.framework in Frameworks */,
 				B5E8118D20E9B17100D39DD8 /* GoogleSignIn.framework in Frameworks */,
-				B55AD06021871DC50092B4C4 /* Bolts.framework in Frameworks */,
 				B55AD05F21871DC50092B4C4 /* FBSDKLoginKit.framework in Frameworks */,
 				B5E8118E20E9B17100D39DD8 /* GoogleSignInDependencies.framework in Frameworks */,
 			);
@@ -264,7 +261,6 @@
 		B5CBEFBE20E930E8005F16B1 /* Facebook */ = {
 			isa = PBXGroup;
 			children = (
-				B55AD05D21871DC50092B4C4 /* Bolts.framework */,
 				B55AD05E21871DC50092B4C4 /* FBSDKCoreKit.framework */,
 				B55AD05C21871DC50092B4C4 /* FBSDKLoginKit.framework */,
 			);
@@ -611,7 +607,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -642,7 +639,11 @@
 				INFOPLIST_FILE = Identity/iOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -680,7 +681,11 @@
 				INFOPLIST_FILE = Identity/iOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -688,7 +693,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.standalone.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Identity;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -737,7 +743,10 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = IdentityTesting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.standalone.Identity.testing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -772,7 +781,10 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = IdentityTesting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.standalone.Identity.testing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
